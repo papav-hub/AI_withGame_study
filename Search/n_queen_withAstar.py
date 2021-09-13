@@ -1,4 +1,5 @@
 import queue
+# 2019156037 최혜민
 
 # 상태를 나타내는 클래스, f(n) 값을 저장한다.
 class State:
@@ -18,7 +19,8 @@ class State:
         for i in range(n):
             for j in range(i, n):
                 if(abs(self.board[i]-self.board[j])==abs(i-j)): # 대각선이 겹치는 부분 찾기
-                    result.append(self.get_new_board(i, j-1, moves))
+                    if(i != (j-1) and (j-1) >= 0):
+                        result.append(self.get_new_board(i, j-1, moves)) # 대각선으로 겹치는 부분 다른것과 바꾸기
         return result
 
 
