@@ -1,0 +1,21 @@
+﻿  Baker.cpp
+C:\Users\Hyemin\Desktop\인공지능\2019156037_최혜민\2019156037_최혜민\BaseGameEntity.h(15,10): fatal error C1083: 포함 파일을 열 수 없습니다. 'messaging/Telegram.h': No such file or directory
+  BakerOwnedStates.cpp
+C:\Users\Hyemin\Desktop\인공지능\2019156037_최혜민\2019156037_최혜민\BakerOwnedStates.h(13,10): fatal error C1083: 포함 파일을 열 수 없습니다. 'fsm/State.h': No such file or directory
+  BaseGameEntity.cpp
+C:\Users\Hyemin\Desktop\인공지능\2019156037_최혜민\2019156037_최혜민\BaseGameEntity.h(15,10): fatal error C1083: 포함 파일을 열 수 없습니다. 'messaging/Telegram.h': No such file or directory
+  Cat.cpp
+C:\Users\Hyemin\Desktop\인공지능\2019156037_최혜민\2019156037_최혜민\BaseGameEntity.h(15,10): fatal error C1083: 포함 파일을 열 수 없습니다. 'messaging/Telegram.h': No such file or directory
+  CatOwnedStates.cpp
+C:\Users\Hyemin\Desktop\인공지능\2019156037_최혜민\2019156037_최혜민\CatOwnedStates.h(13,10): fatal error C1083: 포함 파일을 열 수 없습니다. 'fsm/State.h': No such file or directory
+  EntityManager.cpp
+C:\Users\Hyemin\Desktop\인공지능\2019156037_최혜민\2019156037_최혜민\BaseGameEntity.h(15,10): fatal error C1083: 포함 파일을 열 수 없습니다. 'messaging/Telegram.h': No such file or directory
+  main.cpp
+C:\Users\Hyemin\Desktop\인공지능\2019156037_최혜민\2019156037_최혜민\BaseGameEntity.h(15,10): fatal error C1083: 포함 파일을 열 수 없습니다. 'messaging/Telegram.h': No such file or directory
+  MessageDispatcher.cpp
+C:\Users\Hyemin\Desktop\인공지능\2019156037_최혜민\2019156037_최혜민\MessageDispatcher.h(18,10): fatal error C1083: 포함 파일을 열 수 없습니다. 'misc/ConsoleUtils.h': No such file or directory
+  PasserBy.cpp
+C:\Users\Hyemin\Desktop\인공지능\2019156037_최혜민\2019156037_최혜민\BaseGameEntity.h(15,10): fatal error C1083: 포함 파일을 열 수 없습니다. 'messaging/Telegram.h': No such file or directory
+  PasserByOwnedStates.cpp
+C:\Users\Hyemin\Desktop\인공지능\2019156037_최혜민\2019156037_최혜민\PasserByOwnedStates.h(13,10): fatal error C1083: 포함 파일을 열 수 없습니다. 'fsm/State.h': No such file or directory
+  코드를 생성하고 있습니다...
