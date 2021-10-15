@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{cfdef121-cb17-4a17-9513-af6c30cb6655}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{9747fd64-3c0d-46b0-98be-06672b9137de}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{0d6f7ae5-b7a4-48e4-b1a5-6c41dc68c208}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+    <Filter Include="graph related files">
+      <UniqueIdentifier>{43e46009-d4f8-4a6b-8045-ea9f577a486c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common">
+      <UniqueIdentifier>{357752ff-bc07-4bb2-8a53-d8abe2a8302b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Pathfinder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\misc\Cgdi.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Time\PrecisionTimer.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\misc\WindowUtils.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="constants.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Pathfinder.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Graph\AStarHeuristicPolicies.h">
+      <Filter>graph related files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Graph\GraphAlgorithms.h">
+      <Filter>graph related files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Graph\GraphEdgeTypes.h">
+      <Filter>graph related files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Graph\GraphNodeTypes.h">
+      <Filter>graph related files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Graph\HandyGraphFunctions.h">
+      <Filter>graph related files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Graph\NodeTypeEnumerations.h">
+      <Filter>graph related files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Graph\SparseGraph.h">
+      <Filter>graph related files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Cgdi.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\misc\Cgdi.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Time\PrecisionTimer.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\misc\PriorityQueue.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\PriorityQueue.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Patterns\Singleton.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\misc\Stream_Utility_Functions.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\misc\utils.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\utils.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\2D\Vector2D.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\misc\WindowUtils.h">
+      <Filter>common</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="icon1.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="toolbar1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="toolbar.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>
