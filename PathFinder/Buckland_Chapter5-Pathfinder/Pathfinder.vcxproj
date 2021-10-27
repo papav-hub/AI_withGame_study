@@ -49,7 +49,7 @@
     <OutDir>.\Debug\</OutDir>
     <IntDir>.\Debug\</IntDir>
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>E:\Desktop\AI_withGame_study\PathFinder\Common</IncludePath>
+    <IncludePath>E:\Desktop\Buckland_PGAIBE_Source_VC6-VS2010\VS2010\Common</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>

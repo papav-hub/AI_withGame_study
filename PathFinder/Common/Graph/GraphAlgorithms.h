@@ -30,81 +30,138 @@
 //  class to implement a depth first search. 
 //-----------------------------------------------------------------------------
 template<class graph_type>
-class Graph_SearchDFS
-{
+class Graph_SearchDFS {
 private:
 
-  //to aid legibility
   enum {visited, unvisited, no_parent_assigned};
 
-  //create a typedef for the edge and node types used by the graph
+
   typedef typename graph_type::EdgeType Edge;
   typedef typename graph_type::NodeType Node;
 
 private:
 
-  //a reference to the graph to be searched
+
   const graph_type& m_Graph;
 
-  //this records the indexes of all the nodes that are visited as the
-  //search progresses
   std::vector<int>  m_Visited;
 
-  //this holds the route taken to the target. Given a node index, the value
-  //at that index is the node's parent. ie if the path to the target is
-  //3-8-27, then m_Route[8] will hold 3 and m_Route[27] will hold 8.
   std::vector<int>  m_Route;
 
-  //As the search progresses, this will hold all the edges the algorithm has
-  //examined. THIS IS NOT NECESSARY FOR THE SEARCH, IT IS HERE PURELY
-  //TO PROVIDE THE USER WITH SOME VISUAL FEEDBACK
+
+  std::vector<int> m_Limit;   // 추가한 부분
+  int depth;   // 추가한 부분
+  int m_iSearchLimit;    // 추가한 부분
+
   std::vector<const Edge*>  m_SpanningTree;
 
-  //the source and target node indices
   int               m_iSource,
                     m_iTarget;
 
-  //true if a path to the target has been found
   bool              m_bFound;
 
 
-  //this method performs the DFS search
   bool Search();
   
 public:
 
-  Graph_SearchDFS(const graph_type& graph,
-                  int          source,
-                  int          target = -1 ):
-  
-                                      m_Graph(graph),
-                                      m_iSource(source),
-                                      m_iTarget(target),
-                                      m_bFound(false),
-                                      m_Visited(m_Graph.NumNodes(), unvisited),
-                                      m_Route(m_Graph.NumNodes(), no_parent_assigned)
+    Graph_SearchDFS(const graph_type& graph,
+        int          source,
+        int		   limit,
+        int          target = -1) :
 
-  {                                                                         
-    m_bFound = Search(); 
-  }
+        m_Graph(graph),
+        m_iSource(source),
+        m_iTarget(target),
+        m_iSearchLimit(limit),
+        m_bFound(false),
+        m_Visited(m_Graph.NumNodes(), unvisited),
+        m_Route(m_Graph.NumNodes(), no_parent_assigned),
+        m_Limit(m_Graph.NumNodes(), -1)
+
+    {
+        m_bFound = Search();
+    }
 
 
-  //returns a vector containing pointers to all the edges the search has examined
   std::vector<const Edge*> GetSearchTree()const{return m_SpanningTree;}
 
-  //returns true if the target node has been located
   bool   Found()const{return m_bFound;}
 
-  //returns a vector of node indexes that comprise the shortest path
-  //from the source to the target
   std::list<int> GetPathToTarget()const;  
+
 };
 
 //-----------------------------------------------------------------------------
 template <class graph_type>
-bool Graph_SearchDFS<graph_type>::Search()
+
+
+bool Graph_SearchDFS<graph_type>::Search() // 바꾼 부분
 {
+
+
+    // create a std stack of edges
+    std::stack<const Edge*> stack;
+    int m_count = 0;
+
+    //create a dummy edge and put on the stack
+    Edge Dummy(m_iSource, m_iSource, 0);
+
+    for (m_iSearchLimit = 1; ;) {
+        stack.push(&Dummy);
+
+        m_Limit[Dummy.To()] = 0;
+        while (!stack.empty())
+        {
+            const Edge* Next = stack.top();
+
+            stack.pop();
+
+            m_Route[Next->To()] = Next->From();
+
+            if (Next != &Dummy)
+            {
+                m_SpanningTree.push_back(Next);
+            }
+
+            if (Next->To() == m_iTarget)
+            {
+                return true;
+            }
+
+            graph_type::ConstEdgeIterator ConstEdgeItr(m_Graph, Next->To());
+
+            if (m_iSearchLimit > m_Limit[Next->To()]) {
+                int depth = m_Limit[Next->To()] + 1;
+
+                for (const Edge* pE = ConstEdgeItr.begin();
+                    !ConstEdgeItr.end();
+                    pE = ConstEdgeItr.next()) {
+                    if (m_Limit[pE->To()] == -1 || depth < m_Limit[pE->To()]) {
+                        m_Limit[pE->To()] = depth;
+                        stack.push(pE);
+                    }
+
+                }
+            }
+        }
+        for (auto d = m_Limit.begin(); d != m_Limit.end(); ++d) {
+            *d = -1;
+        }
+
+        m_iSearchLimit += 1;
+
+        if (m_iSearchLimit > 10000) {
+            break;
+        }
+    }
+    return false;
+
+
+    /*
+    
   //create a std stack of edges
+  // 표준 edge stack 만들기
   std::stack<const Edge*> stack;
 
   //create a dummy edge and put on the stack
@@ -112,9 +169,14 @@ bool Graph_SearchDFS<graph_type>::Search()
   
   stack.push(&Dummy);
 
+
+  int size = stack.size();
+
+
+
+  
   //while there are edges in the stack keep searching
-  while (!stack.empty())
-  {
+  while (!stack.empty()){
     //grab the next edge
     const Edge* Next = stack.top();
 
@@ -142,21 +204,24 @@ bool Graph_SearchDFS<graph_type>::Search()
     //push the edges leading from the node this edge points to onto
     //the stack (provided the edge does not point to a previously 
     //visited node)
+    // edge를 노드로부터 스택으로 이어지는 노드로...?
+    // edge가 이전에 방문한 노드를 가리키지 않는 경우
     graph_type::ConstEdgeIterator ConstEdgeItr(m_Graph, Next->To());
 
-    for (const Edge* pE=ConstEdgeItr.begin();
-        !ConstEdgeItr.end();
-         pE=ConstEdgeItr.next())
-    {
-      if (m_Visited[pE->To()] == unvisited)
-      {
+    for (const Edge* pE=ConstEdgeItr.begin(); !ConstEdgeItr.end(); pE=ConstEdgeItr.next()) {
+      if (m_Visited[pE->To()] == unvisited){
         stack.push(pE);
       }
     }
+
+
   }
 
+  
+
   //no path to target
-  return false;
+  return false;*/
+
 }
 
 //-----------------------------------------------------------------------------
@@ -165,8 +230,6 @@ std::list<int> Graph_SearchDFS<graph_type>::GetPathToTarget()const
 {
   std::list<int> path;
 
-  //just return an empty path if no path to target found or if
-  //no target has been specified
   if (!m_bFound || m_iTarget<0) return path;
 
   int nd = m_iTarget;
@@ -182,6 +245,22 @@ std::list<int> Graph_SearchDFS<graph_type>::GetPathToTarget()const
 
   return path;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -261,7 +340,7 @@ public:
 template <class graph_type>
 bool Graph_SearchBFS<graph_type>::Search()
 {
-  //create a std queue of edges
+
   std::queue<const Edge*> Q;
 
   const Edge Dummy(m_iSource, m_iSource, 0);
@@ -346,6 +425,21 @@ std::list<int> Graph_SearchBFS<graph_type>::GetPathToTarget()const
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //----------------------- Graph_SearchDijkstra --------------------------------
 //
 //  Given a graph, source and optional target this class solves for
@@ -422,13 +516,13 @@ public:
 
   //returns the total cost to the given node
   double GetCostToNode(unsigned int nd)const{return m_CostToThisNode[nd];}
+
 };
-
-
 //-----------------------------------------------------------------------------
 template <class graph_type>
 void Graph_SearchDijkstra<graph_type>::Search()
 {
+
   //create an indexed priority queue that sorts smallest to largest
   //(front to back).Note that the maximum number of elements the iPQ
   //may contain is N. This is because no node can be represented on the 
@@ -519,6 +613,31 @@ std::list<int> Graph_SearchDijkstra<graph_type>::GetPathToTarget()const
   return path;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //------------------------------- Graph_SearchAStar --------------------------
 //
 //  this searchs a graph using the distance between the target node and the 
@@ -579,6 +698,7 @@ public:
 
   //returns the total cost to the target
   double GetCostToTarget()const{return m_GCosts[m_iTarget];}
+
 };
 
 //-----------------------------------------------------------------------------
@@ -643,6 +763,8 @@ void Graph_SearchAStar<graph_type, heuristic>::Search()
       }
     }
   }
+
+
 }
 
 //-----------------------------------------------------------------------------
@@ -667,6 +789,23 @@ std::list<int> Graph_SearchAStar<graph_type, heuristic>::GetPathToTarget()const
 
   return path;
 } 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -777,45 +916,102 @@ public:
 
 
 
-//*
+
+
+
+
+
 //---------------------- Graph_SearchIterativeDeepening --------------------------------
 //
 //------------------------------------------------------------------------
 
-/*
+
 template <class graph_type, class heuristic>
 class Graph_SearchIterativeDeepening
 {
 private:
 
+    //to aid legibility 읽기 쉽게 하다.
+    enum { visited, unvisited, no_parent_assigned };
+
+    //create a typedef for the edge and node types used by the graph
+    // 그래프에 사용되는 edge, 노드 type로 typedef
+    typedef typename graph_type::EdgeType Edge;
+    typedef typename graph_type::NodeType Node;
 
 private:
 
+    //a reference to the graph to be searched
+    // 검색할 Graph에 대한 참조 변수
+    const graph_type& m_Graph;
+
+    //this records the indexes of all the nodes that are visited as the
+    //search progresses
+    // 검색이 진행도리 때마다 방문한 노드 인덱스 기록
+    std::vector<int>  m_Visited;
+
+    //this holds the route taken to the target. Given a node index, the value
+    //at that index is the node's parent. ie if the path to the target is
+    //3-8-27, then m_Route[8] will hold 3 and m_Route[27] will hold 8.
+    // 표적으로 가는 경로가 고정됩니다.
+    // 노드 인덱스가 지정되면 해당 인덱스 값이 노드의 상위 값이 됩니다.
+    // if 경로 : 3-8-17, then m_Route[8] = 3, m_Route[27] = 8
+    std::vector<int>  m_Route;
+
+    //As the search progresses, this will hold all the edges the algorithm has
+    //examined. THIS IS NOT NECESSARY FOR THE SEARCH, IT IS HERE PURELY
+    //TO PROVIDE THE USER WITH SOME VISUAL FEEDBACK
+    // 검색 진행됨에 따라 검사한 모든 Edge를 유지합니다.
+    // 검색에는 사용되지 않습니다.
+    // 사용자에게 시각적 피드백를 제공하기 위한 것입니다.
+    std::vector<const Edge*>  m_SpanningTree;
+
+    //the source and target node indices
+    // 소스와 대상 node 인덱스
+    int               m_iSource,
+        m_iTarget;
+
+    //true if a path to the target has been found
+    // 대상에 대한 경로가 발견된 경우 true
+    bool              m_bFound;
+
+
+    //this method performs the DFS search
+    // DFS
+    // bool Search();
 
 public:
 
+    Graph_SearchIterativeDeepening(const graph_type& graph,
+        int          source,
+        int          target = -1) :
+
+        m_Graph(graph),
+        m_iSource(source),
+        m_iTarget(target),
+        m_bFound(false),
+        m_Visited(m_Graph.NumNodes(), unvisited),
+        m_Route(m_Graph.NumNodes(), no_parent_assigned)
+
+    {
+        m_bFound = Search();
+    }
+
+
+    //returns a vector containing pointers to all the edges the search has examined
+    // 검사한 모든 edge 포인터를 포함하는 벡터
+    std::vector<const Edge*> GetSearchTree()const { return m_SpanningTree; }
+
+    //returns true if the target node has been located
+    // 대상 노드를 찾은 경우 true
+    bool   Found()const { return m_bFound; }
+
+    //returns a vector of node indexes that comprise the shortest path
+    //from the source to the target
+    // source부터 대상까지 최단경로 노드 인덱스 반환
+    std::list<int> GetPathToTarget()const;
+
 };
-
-//-----------------------------------------------------------------------------
-template <class graph_type, class heuristic>
-void Graph_SearchAStar<graph_type, heuristic>::Search()
-{
-
-
-}
-
-//-----------------------------------------------------------------------------
-template <class graph_type, class heuristic>
-std::list<int> Graph_SearchIterativeDeepening<graph_type, heuristic>::GetPathToTarget()const
-{
-    std::list<int> path;
-
-
-
-    return path;
-}
-
-*/
 
 
 

@@ -25,6 +25,7 @@ protected:
   int        m_iIndex;
 
 public:
+    int m_iDepth;
   
   GraphNode():m_iIndex(invalid_node_index){}
   GraphNode(int idx):m_iIndex(idx){}
@@ -34,6 +35,10 @@ public:
 
   int  Index()const{return m_iIndex;}
   void SetIndex(int NewIndex){m_iIndex = NewIndex;}
+
+
+  int	Depth() const { return m_iDepth; }
+  void  SetDepth(int NewDepth) { m_iDepth = NewDepth; }
   
 
 
