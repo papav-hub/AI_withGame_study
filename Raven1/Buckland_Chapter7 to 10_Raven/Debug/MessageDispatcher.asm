@@ -10,13 +10,13 @@ INCLUDELIB LIBCMTD
 INCLUDELIB OLDNAMES
 
 CONST	SEGMENT
-$SG172904 DB	'invalid argument', 00H
+$SG172898 DB	'invalid argument', 00H
 	ORG $+3
-$SG172905 DB	'%s', 00H
+$SG172899 DB	'%s', 00H
 	ORG $+1
-$SG172906 DB	'C:\Program Files (x86)\Microsoft Visual Studio\2019\Comm'
+$SG172900 DB	'C:\Program Files (x86)\Microsoft Visual Studio\2019\Comm'
 	DB	'unity\VC\Tools\MSVC\14.29.30133\include\xmemory', 00H
-$SG172907 DB	'C', 00H, ':', 00H, '\', 00H, 'P', 00H, 'r', 00H, 'o', 00H
+$SG172901 DB	'C', 00H, ':', 00H, '\', 00H, 'P', 00H, 'r', 00H, 'o', 00H
 	DB	'g', 00H, 'r', 00H, 'a', 00H, 'm', 00H, ' ', 00H, 'F', 00H, 'i'
 	DB	00H, 'l', 00H, 'e', 00H, 's', 00H, ' ', 00H, '(', 00H, 'x', 00H
 	DB	'8', 00H, '6', 00H, ')', 00H, '\', 00H, 'M', 00H, 'i', 00H, 'c'
@@ -33,7 +33,7 @@ $SG172907 DB	'C', 00H, ':', 00H, '\', 00H, 'P', 00H, 'r', 00H, 'o', 00H
 	DB	00H, 'l', 00H, 'u', 00H, 'd', 00H, 'e', 00H, '\', 00H, 'x', 00H
 	DB	'm', 00H, 'e', 00H, 'm', 00H, 'o', 00H, 'r', 00H, 'y', 00H, 00H
 	DB	00H
-$SG172908 DB	's', 00H, 't', 00H, 'd', 00H, ':', 00H, ':', 00H, '_', 00H
+$SG172902 DB	's', 00H, 't', 00H, 'd', 00H, ':', 00H, ':', 00H, '_', 00H
 	DB	'A', 00H, 'l', 00H, 'l', 00H, 'o', 00H, 'c', 00H, 'a', 00H, 't'
 	DB	00H, 'e', 00H, '_', 00H, 'm', 00H, 'a', 00H, 'n', 00H, 'u', 00H
 	DB	'a', 00H, 'l', 00H, 'l', 00H, 'y', 00H, '_', 00H, 'v', 00H, 'e'
@@ -41,11 +41,11 @@ $SG172908 DB	's', 00H, 't', 00H, 'd', 00H, ':', 00H, ':', 00H, '_', 00H
 	DB	'l', 00H, 'i', 00H, 'g', 00H, 'n', 00H, 'e', 00H, 'd', 00H, 00H
 	DB	00H
 	ORG $+2
-$SG172909 DB	'"', 00H, 'i', 00H, 'n', 00H, 'v', 00H, 'a', 00H, 'l', 00H
+$SG172903 DB	'"', 00H, 'i', 00H, 'n', 00H, 'v', 00H, 'a', 00H, 'l', 00H
 	DB	'i', 00H, 'd', 00H, ' ', 00H, 'a', 00H, 'r', 00H, 'g', 00H, 'u'
 	DB	00H, 'm', 00H, 'e', 00H, 'n', 00H, 't', 00H, '"', 00H, 00H, 00H
 	ORG $+2
-$SG173035 DB	'C:\Program Files (x86)\Microsoft Visual Studio\2019\Comm'
+$SG173029 DB	'C:\Program Files (x86)\Microsoft Visual Studio\2019\Comm'
 	DB	'unity\VC\Tools\MSVC\14.29.30133\include\xlocale', 00H
 CONST	ENDS
 PUBLIC	?__empty_global_delete@@YAXPAX@Z		; __empty_global_delete
@@ -2575,11 +2575,11 @@ $LN4@Allocate_m:
 	je	SHORT $LN7@Allocate_m
 	jmp	SHORT $LN2@Allocate_m
 $LN7@Allocate_m:
-	push	OFFSET $SG172904
-	push	OFFSET $SG172905
+	push	OFFSET $SG172898
+	push	OFFSET $SG172899
 	push	0
 	push	142					; 0000008eH
-	push	OFFSET $SG172906
+	push	OFFSET $SG172900
 	push	2
 	call	__CrtDbgReport
 	add	esp, 24					; 00000018H
@@ -2589,9 +2589,9 @@ $LN7@Allocate_m:
 $LN12@Allocate_m:
 	push	0
 	push	142					; 0000008eH
-	push	OFFSET $SG172907
-	push	OFFSET $SG172908
-	push	OFFSET $SG172909
+	push	OFFSET $SG172901
+	push	OFFSET $SG172902
+	push	OFFSET $SG172903
 	call	__invalid_parameter
 	add	esp, 20					; 00000014H
 	xor	ecx, ecx

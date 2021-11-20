@@ -10,13 +10,13 @@ INCLUDELIB LIBCMTD
 INCLUDELIB OLDNAMES
 
 CONST	SEGMENT
-$SG165611 DB	'invalid argument', 00H
+$SG165605 DB	'invalid argument', 00H
 	ORG $+3
-$SG165612 DB	'%s', 00H
+$SG165606 DB	'%s', 00H
 	ORG $+1
-$SG165613 DB	'C:\Program Files (x86)\Microsoft Visual Studio\2019\Comm'
+$SG165607 DB	'C:\Program Files (x86)\Microsoft Visual Studio\2019\Comm'
 	DB	'unity\VC\Tools\MSVC\14.29.30133\include\xmemory', 00H
-$SG165614 DB	'C', 00H, ':', 00H, '\', 00H, 'P', 00H, 'r', 00H, 'o', 00H
+$SG165608 DB	'C', 00H, ':', 00H, '\', 00H, 'P', 00H, 'r', 00H, 'o', 00H
 	DB	'g', 00H, 'r', 00H, 'a', 00H, 'm', 00H, ' ', 00H, 'F', 00H, 'i'
 	DB	00H, 'l', 00H, 'e', 00H, 's', 00H, ' ', 00H, '(', 00H, 'x', 00H
 	DB	'8', 00H, '6', 00H, ')', 00H, '\', 00H, 'M', 00H, 'i', 00H, 'c'
@@ -33,7 +33,7 @@ $SG165614 DB	'C', 00H, ':', 00H, '\', 00H, 'P', 00H, 'r', 00H, 'o', 00H
 	DB	00H, 'l', 00H, 'u', 00H, 'd', 00H, 'e', 00H, '\', 00H, 'x', 00H
 	DB	'm', 00H, 'e', 00H, 'm', 00H, 'o', 00H, 'r', 00H, 'y', 00H, 00H
 	DB	00H
-$SG165615 DB	's', 00H, 't', 00H, 'd', 00H, ':', 00H, ':', 00H, '_', 00H
+$SG165609 DB	's', 00H, 't', 00H, 'd', 00H, ':', 00H, ':', 00H, '_', 00H
 	DB	'A', 00H, 'l', 00H, 'l', 00H, 'o', 00H, 'c', 00H, 'a', 00H, 't'
 	DB	00H, 'e', 00H, '_', 00H, 'm', 00H, 'a', 00H, 'n', 00H, 'u', 00H
 	DB	'a', 00H, 'l', 00H, 'l', 00H, 'y', 00H, '_', 00H, 'v', 00H, 'e'
@@ -41,7 +41,7 @@ $SG165615 DB	's', 00H, 't', 00H, 'd', 00H, ':', 00H, ':', 00H, '_', 00H
 	DB	'l', 00H, 'i', 00H, 'g', 00H, 'n', 00H, 'e', 00H, 'd', 00H, 00H
 	DB	00H
 	ORG $+2
-$SG165616 DB	'"', 00H, 'i', 00H, 'n', 00H, 'v', 00H, 'a', 00H, 'l', 00H
+$SG165610 DB	'"', 00H, 'i', 00H, 'n', 00H, 'v', 00H, 'a', 00H, 'l', 00H
 	DB	'i', 00H, 'd', 00H, ' ', 00H, 'a', 00H, 'r', 00H, 'g', 00H, 'u'
 	DB	00H, 'm', 00H, 'e', 00H, 'n', 00H, 't', 00H, '"', 00H, 00H, 00H
 	ORG $+2
@@ -60,7 +60,7 @@ $SG165616 DB	'"', 00H, 'i', 00H, 'n', 00H, 'v', 00H, 'a', 00H, 'l', 00H
 	DD	0ffff00H
 	DD	0c8c8c8H
 	DD	0e6e6ffH
-$SG160419 DB	'RIP', 00H
+$SG160413 DB	'RIP', 00H
 CONST	ENDS
 PUBLIC	?__empty_global_delete@@YAXPAX@Z		; __empty_global_delete
 PUBLIC	?__empty_global_delete@@YAXPAXI@Z		; __empty_global_delete
@@ -2142,11 +2142,11 @@ $LN4@Allocate_m:
 	je	SHORT $LN7@Allocate_m
 	jmp	SHORT $LN2@Allocate_m
 $LN7@Allocate_m:
-	push	OFFSET $SG165611
-	push	OFFSET $SG165612
+	push	OFFSET $SG165605
+	push	OFFSET $SG165606
 	push	0
 	push	142					; 0000008eH
-	push	OFFSET $SG165613
+	push	OFFSET $SG165607
 	push	2
 	call	__CrtDbgReport
 	add	esp, 24					; 00000018H
@@ -2156,9 +2156,9 @@ $LN7@Allocate_m:
 $LN12@Allocate_m:
 	push	0
 	push	142					; 0000008eH
-	push	OFFSET $SG165614
-	push	OFFSET $SG165615
-	push	OFFSET $SG165616
+	push	OFFSET $SG165608
+	push	OFFSET $SG165609
+	push	OFFSET $SG165610
 	call	__invalid_parameter
 	add	esp, 20					; 00000014H
 	xor	ecx, ecx
@@ -8366,7 +8366,7 @@ $LN4@Render:
 
 ; 60   :     gdi->TextAtPos(it->Position.x - 10, it->Position.y - 5, "RIP");
 
-	push	OFFSET $SG160419
+	push	OFFSET $SG160413
 	lea	ecx, DWORD PTR $T7[ebp]
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	BYTE PTR __$EHRec$[ebp+8], 1

@@ -10,13 +10,13 @@ INCLUDELIB LIBCMTD
 INCLUDELIB OLDNAMES
 
 CONST	SEGMENT
-$SG168900 DB	'invalid argument', 00H
+$SG168894 DB	'invalid argument', 00H
 	ORG $+3
-$SG168901 DB	'%s', 00H
+$SG168895 DB	'%s', 00H
 	ORG $+1
-$SG168902 DB	'C:\Program Files (x86)\Microsoft Visual Studio\2019\Comm'
+$SG168896 DB	'C:\Program Files (x86)\Microsoft Visual Studio\2019\Comm'
 	DB	'unity\VC\Tools\MSVC\14.29.30133\include\xmemory', 00H
-$SG168903 DB	'C', 00H, ':', 00H, '\', 00H, 'P', 00H, 'r', 00H, 'o', 00H
+$SG168897 DB	'C', 00H, ':', 00H, '\', 00H, 'P', 00H, 'r', 00H, 'o', 00H
 	DB	'g', 00H, 'r', 00H, 'a', 00H, 'm', 00H, ' ', 00H, 'F', 00H, 'i'
 	DB	00H, 'l', 00H, 'e', 00H, 's', 00H, ' ', 00H, '(', 00H, 'x', 00H
 	DB	'8', 00H, '6', 00H, ')', 00H, '\', 00H, 'M', 00H, 'i', 00H, 'c'
@@ -33,7 +33,7 @@ $SG168903 DB	'C', 00H, ':', 00H, '\', 00H, 'P', 00H, 'r', 00H, 'o', 00H
 	DB	00H, 'l', 00H, 'u', 00H, 'd', 00H, 'e', 00H, '\', 00H, 'x', 00H
 	DB	'm', 00H, 'e', 00H, 'm', 00H, 'o', 00H, 'r', 00H, 'y', 00H, 00H
 	DB	00H
-$SG168904 DB	's', 00H, 't', 00H, 'd', 00H, ':', 00H, ':', 00H, '_', 00H
+$SG168898 DB	's', 00H, 't', 00H, 'd', 00H, ':', 00H, ':', 00H, '_', 00H
 	DB	'A', 00H, 'l', 00H, 'l', 00H, 'o', 00H, 'c', 00H, 'a', 00H, 't'
 	DB	00H, 'e', 00H, '_', 00H, 'm', 00H, 'a', 00H, 'n', 00H, 'u', 00H
 	DB	'a', 00H, 'l', 00H, 'l', 00H, 'y', 00H, '_', 00H, 'v', 00H, 'e'
@@ -41,7 +41,7 @@ $SG168904 DB	's', 00H, 't', 00H, 'd', 00H, ':', 00H, ':', 00H, '_', 00H
 	DB	'l', 00H, 'i', 00H, 'g', 00H, 'n', 00H, 'e', 00H, 'd', 00H, 00H
 	DB	00H
 	ORG $+2
-$SG168905 DB	'"', 00H, 'i', 00H, 'n', 00H, 'v', 00H, 'a', 00H, 'l', 00H
+$SG168899 DB	'"', 00H, 'i', 00H, 'n', 00H, 'v', 00H, 'a', 00H, 'l', 00H
 	DB	'i', 00H, 'd', 00H, ' ', 00H, 'a', 00H, 'r', 00H, 'g', 00H, 'u'
 	DB	00H, 'm', 00H, 'e', 00H, 'n', 00H, 't', 00H, '"', 00H, 00H, 00H
 CONST	ENDS
@@ -951,11 +951,11 @@ $LN4@Allocate_m:
 	je	SHORT $LN7@Allocate_m
 	jmp	SHORT $LN2@Allocate_m
 $LN7@Allocate_m:
-	push	OFFSET $SG168900
-	push	OFFSET $SG168901
+	push	OFFSET $SG168894
+	push	OFFSET $SG168895
 	push	0
 	push	142					; 0000008eH
-	push	OFFSET $SG168902
+	push	OFFSET $SG168896
 	push	2
 	call	__CrtDbgReport
 	add	esp, 24					; 00000018H
@@ -965,9 +965,9 @@ $LN7@Allocate_m:
 $LN12@Allocate_m:
 	push	0
 	push	142					; 0000008eH
-	push	OFFSET $SG168903
-	push	OFFSET $SG168904
-	push	OFFSET $SG168905
+	push	OFFSET $SG168897
+	push	OFFSET $SG168898
+	push	OFFSET $SG168899
 	call	__invalid_parameter
 	add	esp, 20					; 00000014H
 	xor	ecx, ecx

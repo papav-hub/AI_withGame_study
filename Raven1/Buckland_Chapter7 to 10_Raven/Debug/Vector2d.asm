@@ -10,13 +10,13 @@ INCLUDELIB LIBCMTD
 INCLUDELIB OLDNAMES
 
 CONST	SEGMENT
-$SG165480 DB	'invalid argument', 00H
+$SG165474 DB	'invalid argument', 00H
 	ORG $+3
-$SG165481 DB	'%s', 00H
+$SG165475 DB	'%s', 00H
 	ORG $+1
-$SG165482 DB	'C:\Program Files (x86)\Microsoft Visual Studio\2019\Comm'
+$SG165476 DB	'C:\Program Files (x86)\Microsoft Visual Studio\2019\Comm'
 	DB	'unity\VC\Tools\MSVC\14.29.30133\include\xmemory', 00H
-$SG165483 DB	'C', 00H, ':', 00H, '\', 00H, 'P', 00H, 'r', 00H, 'o', 00H
+$SG165477 DB	'C', 00H, ':', 00H, '\', 00H, 'P', 00H, 'r', 00H, 'o', 00H
 	DB	'g', 00H, 'r', 00H, 'a', 00H, 'm', 00H, ' ', 00H, 'F', 00H, 'i'
 	DB	00H, 'l', 00H, 'e', 00H, 's', 00H, ' ', 00H, '(', 00H, 'x', 00H
 	DB	'8', 00H, '6', 00H, ')', 00H, '\', 00H, 'M', 00H, 'i', 00H, 'c'
@@ -33,7 +33,7 @@ $SG165483 DB	'C', 00H, ':', 00H, '\', 00H, 'P', 00H, 'r', 00H, 'o', 00H
 	DB	00H, 'l', 00H, 'u', 00H, 'd', 00H, 'e', 00H, '\', 00H, 'x', 00H
 	DB	'm', 00H, 'e', 00H, 'm', 00H, 'o', 00H, 'r', 00H, 'y', 00H, 00H
 	DB	00H
-$SG165484 DB	's', 00H, 't', 00H, 'd', 00H, ':', 00H, ':', 00H, '_', 00H
+$SG165478 DB	's', 00H, 't', 00H, 'd', 00H, ':', 00H, ':', 00H, '_', 00H
 	DB	'A', 00H, 'l', 00H, 'l', 00H, 'o', 00H, 'c', 00H, 'a', 00H, 't'
 	DB	00H, 'e', 00H, '_', 00H, 'm', 00H, 'a', 00H, 'n', 00H, 'u', 00H
 	DB	'a', 00H, 'l', 00H, 'l', 00H, 'y', 00H, '_', 00H, 'v', 00H, 'e'
@@ -41,15 +41,15 @@ $SG165484 DB	's', 00H, 't', 00H, 'd', 00H, ':', 00H, ':', 00H, '_', 00H
 	DB	'l', 00H, 'i', 00H, 'g', 00H, 'n', 00H, 'e', 00H, 'd', 00H, 00H
 	DB	00H
 	ORG $+2
-$SG165485 DB	'"', 00H, 'i', 00H, 'n', 00H, 'v', 00H, 'a', 00H, 'l', 00H
+$SG165479 DB	'"', 00H, 'i', 00H, 'n', 00H, 'v', 00H, 'a', 00H, 'l', 00H
 	DB	'i', 00H, 'd', 00H, ' ', 00H, 'a', 00H, 'r', 00H, 'g', 00H, 'u'
 	DB	00H, 'm', 00H, 'e', 00H, 'n', 00H, 't', 00H, '"', 00H, 00H, 00H
 	ORG $+2
-$SG165582 DB	'C:\Program Files (x86)\Microsoft Visual Studio\2019\Comm'
+$SG165576 DB	'C:\Program Files (x86)\Microsoft Visual Studio\2019\Comm'
 	DB	'unity\VC\Tools\MSVC\14.29.30133\include\xlocale', 00H
-$SG157932 DB	' ', 00H
+$SG157926 DB	' ', 00H
 	ORG $+2
-$SG157933 DB	' ', 00H
+$SG157927 DB	' ', 00H
 CONST	ENDS
 PUBLIC	?__empty_global_delete@@YAXPAX@Z		; __empty_global_delete
 PUBLIC	?__empty_global_delete@@YAXPAXI@Z		; __empty_global_delete
@@ -3951,7 +3951,7 @@ ___formal$ = 16						; size = 4
 ; 526  :     _Elem* _Ptrdest = static_cast<_Elem*>(_calloc_dbg(_Count, sizeof(_Elem), _CRT_BLOCK, __FILE__, __LINE__));
 
 	push	526					; 0000020eH
-	push	OFFSET $SG165582
+	push	OFFSET $SG165576
 	push	2
 	push	1
 	mov	ecx, DWORD PTR __Count$[ebp]
@@ -4951,11 +4951,11 @@ $LN4@Allocate_m:
 	je	SHORT $LN7@Allocate_m
 	jmp	SHORT $LN2@Allocate_m
 $LN7@Allocate_m:
-	push	OFFSET $SG165480
-	push	OFFSET $SG165481
+	push	OFFSET $SG165474
+	push	OFFSET $SG165475
 	push	0
 	push	142					; 0000008eH
-	push	OFFSET $SG165482
+	push	OFFSET $SG165476
 	push	2
 	call	__CrtDbgReport
 	add	esp, 24					; 00000018H
@@ -4965,9 +4965,9 @@ $LN7@Allocate_m:
 $LN12@Allocate_m:
 	push	0
 	push	142					; 0000008eH
-	push	OFFSET $SG165483
-	push	OFFSET $SG165484
-	push	OFFSET $SG165485
+	push	OFFSET $SG165477
+	push	OFFSET $SG165478
+	push	OFFSET $SG165479
 	call	__invalid_parameter
 	add	esp, 20					; 00000014H
 	xor	ecx, ecx
@@ -24768,12 +24768,12 @@ _rhs$ = 12						; size = 4
 	sub	esp, 8
 	movsd	xmm0, QWORD PTR [eax+8]
 	movsd	QWORD PTR [esp], xmm0
-	push	OFFSET $SG157932
+	push	OFFSET $SG157926
 	mov	ecx, DWORD PTR _rhs$[ebp]
 	sub	esp, 8
 	movsd	xmm0, QWORD PTR [ecx]
 	movsd	QWORD PTR [esp], xmm0
-	push	OFFSET $SG157933
+	push	OFFSET $SG157927
 	mov	edx, DWORD PTR _os$[ebp]
 	push	edx
 	call	??$?6U?$char_traits@D@std@@@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@0@AAV10@PBD@Z ; std::operator<<<std::char_traits<char> >

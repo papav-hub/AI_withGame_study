@@ -10,13 +10,13 @@ INCLUDELIB LIBCMTD
 INCLUDELIB OLDNAMES
 
 CONST	SEGMENT
-$SG172966 DB	'BOT ', 00H
-$SG172968 DB	00H
+$SG172967 DB	'BOT ', 00H
+$SG172969 DB	00H
 	ORG $+2
-$SG172967 DB	' IS STUCK!!', 00H
-$SG181636 DB	'invalid argument', 00H
+$SG172968 DB	' IS STUCK!!', 00H
+$SG181637 DB	'invalid argument', 00H
 	ORG $+3
-$SG181637 DB	'%s', 00H
+$SG181638 DB	'%s', 00H
 	ORG $+1
 ?colors@@3QBKB DD 0ffH					; colors
 	DD	0ff0000H
@@ -33,9 +33,9 @@ $SG181637 DB	'%s', 00H
 	DD	0ffff00H
 	DD	0c8c8c8H
 	DD	0e6e6ffH
-$SG181638 DB	'C:\Program Files (x86)\Microsoft Visual Studio\2019\Comm'
+$SG181639 DB	'C:\Program Files (x86)\Microsoft Visual Studio\2019\Comm'
 	DB	'unity\VC\Tools\MSVC\14.29.30133\include\xmemory', 00H
-$SG181639 DB	'C', 00H, ':', 00H, '\', 00H, 'P', 00H, 'r', 00H, 'o', 00H
+$SG181640 DB	'C', 00H, ':', 00H, '\', 00H, 'P', 00H, 'r', 00H, 'o', 00H
 	DB	'g', 00H, 'r', 00H, 'a', 00H, 'm', 00H, ' ', 00H, 'F', 00H, 'i'
 	DB	00H, 'l', 00H, 'e', 00H, 's', 00H, ' ', 00H, '(', 00H, 'x', 00H
 	DB	'8', 00H, '6', 00H, ')', 00H, '\', 00H, 'M', 00H, 'i', 00H, 'c'
@@ -52,7 +52,7 @@ $SG181639 DB	'C', 00H, ':', 00H, '\', 00H, 'P', 00H, 'r', 00H, 'o', 00H
 	DB	00H, 'l', 00H, 'u', 00H, 'd', 00H, 'e', 00H, '\', 00H, 'x', 00H
 	DB	'm', 00H, 'e', 00H, 'm', 00H, 'o', 00H, 'r', 00H, 'y', 00H, 00H
 	DB	00H
-$SG181640 DB	's', 00H, 't', 00H, 'd', 00H, ':', 00H, ':', 00H, '_', 00H
+$SG181641 DB	's', 00H, 't', 00H, 'd', 00H, ':', 00H, ':', 00H, '_', 00H
 	DB	'A', 00H, 'l', 00H, 'l', 00H, 'o', 00H, 'c', 00H, 'a', 00H, 't'
 	DB	00H, 'e', 00H, '_', 00H, 'm', 00H, 'a', 00H, 'n', 00H, 'u', 00H
 	DB	'a', 00H, 'l', 00H, 'l', 00H, 'y', 00H, '_', 00H, 'v', 00H, 'e'
@@ -60,11 +60,11 @@ $SG181640 DB	's', 00H, 't', 00H, 'd', 00H, ':', 00H, ':', 00H, '_', 00H
 	DB	'l', 00H, 'i', 00H, 'g', 00H, 'n', 00H, 'e', 00H, 'd', 00H, 00H
 	DB	00H
 	ORG $+2
-$SG181641 DB	'"', 00H, 'i', 00H, 'n', 00H, 'v', 00H, 'a', 00H, 'l', 00H
+$SG181642 DB	'"', 00H, 'i', 00H, 'n', 00H, 'v', 00H, 'a', 00H, 'l', 00H
 	DB	'i', 00H, 'd', 00H, ' ', 00H, 'a', 00H, 'r', 00H, 'g', 00H, 'u'
 	DB	00H, 'm', 00H, 'e', 00H, 'n', 00H, 't', 00H, '"', 00H, 00H, 00H
 	ORG $+2
-$SG181811 DB	'C:\Program Files (x86)\Microsoft Visual Studio\2019\Comm'
+$SG181812 DB	'C:\Program Files (x86)\Microsoft Visual Studio\2019\Comm'
 	DB	'unity\VC\Tools\MSVC\14.29.30133\include\xlocale', 00H
 CONST	ENDS
 PUBLIC	?__empty_global_delete@@YAXPAX@Z		; __empty_global_delete
@@ -4650,7 +4650,7 @@ ___formal$ = 16						; size = 4
 ; 526  :     _Elem* _Ptrdest = static_cast<_Elem*>(_calloc_dbg(_Count, sizeof(_Elem), _CRT_BLOCK, __FILE__, __LINE__));
 
 	push	526					; 0000020eH
-	push	OFFSET $SG181811
+	push	OFFSET $SG181812
 	push	2
 	push	1
 	mov	ecx, DWORD PTR __Count$[ebp]
@@ -5552,11 +5552,11 @@ $LN4@Allocate_m:
 	je	SHORT $LN7@Allocate_m
 	jmp	SHORT $LN2@Allocate_m
 $LN7@Allocate_m:
-	push	OFFSET $SG181636
 	push	OFFSET $SG181637
+	push	OFFSET $SG181638
 	push	0
 	push	142					; 0000008eH
-	push	OFFSET $SG181638
+	push	OFFSET $SG181639
 	push	2
 	call	__CrtDbgReport
 	add	esp, 24					; 00000018H
@@ -5566,9 +5566,9 @@ $LN7@Allocate_m:
 $LN12@Allocate_m:
 	push	0
 	push	142					; 0000008eH
-	push	OFFSET $SG181639
 	push	OFFSET $SG181640
 	push	OFFSET $SG181641
+	push	OFFSET $SG181642
 	call	__invalid_parameter
 	add	esp, 20					; 00000014H
 	xor	ecx, ecx
@@ -23710,11 +23710,11 @@ _this$ = -4						; size = 4
 	mov	ecx, DWORD PTR [edx+8]
 	call	?ID@BaseGameEntity@@QBEHXZ		; BaseGameEntity::ID
 	mov	DWORD PTR $T1[ebp], eax
+	push	OFFSET $SG172969
 	push	OFFSET $SG172968
-	push	OFFSET $SG172967
 	lea	eax, DWORD PTR $T1[ebp]
 	push	eax
-	push	OFFSET $SG172966
+	push	OFFSET $SG172967
 	call	?Instance@DebugConsole@@SAPAV1@XZ	; DebugConsole::Instance
 	mov	ecx, eax
 	call	??$?6$$BY04D@DebugConsole@@QAEAAV0@AAY04$$CBD@Z ; DebugConsole::operator<<<char [5]>

@@ -11,12 +11,18 @@
 #include "Goal_Wander.h"
 #include "Raven_Goal_Types.h"
 #include "Goal_AttackTarget.h"
+/**/
+#include "../Goal_RunAwaySearchItem.h"
+/**/
 
 
 #include "GetWeaponGoal_Evaluator.h"
 #include "GetHealthGoal_Evaluator.h"
 #include "ExploreGoal_Evaluator.h"
 #include "AttackTargetGoal_Evaluator.h"
+/**/
+#include "../RunAwaySearchItem_Evaluator.h"
+/**/
 
 
 Goal_Think::Goal_Think(Raven_Bot* pBot):Goal_Composite<Raven_Bot>(pBot, goal_think)
@@ -33,19 +39,38 @@ Goal_Think::Goal_Think(Raven_Bot* pBot):Goal_Composite<Raven_Bot>(pBot, goal_thi
   double RailgunBias = RandInRange(LowRangeOfBias, HighRangeOfBias);
   double ExploreBias = RandInRange(LowRangeOfBias, HighRangeOfBias);
   double AttackBias = RandInRange(LowRangeOfBias, HighRangeOfBias);
+  /**/
+  double RunAwayBias = RandInRange(LowRangeOfBias, HighRangeOfBias);/**/
+  /**/
 
-  //create the evaluator objects
-  m_Evaluators.push_back(new GetHealthGoal_Evaluator(HealthBias));
-  m_Evaluators.push_back(new ExploreGoal_Evaluator(ExploreBias));
-  m_Evaluators.push_back(new AttackTargetGoal_Evaluator(AttackBias));
+  //create the evaluator objects // Goal_think에서 우선순위 판단할거 6개 // 6개 중에서 고른다.
+  m_Evaluators.push_back(new GetHealthGoal_Evaluator(HealthBias)); //2
+  m_Evaluators.push_back(new ExploreGoal_Evaluator(ExploreBias)); //1
+  m_Evaluators.push_back(new AttackTargetGoal_Evaluator(AttackBias)); //6
   m_Evaluators.push_back(new GetWeaponGoal_Evaluator(ShotgunBias,
-                                                     type_shotgun));
+                                                     type_shotgun)); //4
   m_Evaluators.push_back(new GetWeaponGoal_Evaluator(RailgunBias,
-                                                     type_rail_gun));
+                                                     type_rail_gun)); //5
   m_Evaluators.push_back(new GetWeaponGoal_Evaluator(RocketLauncherBias,
-                                                     type_rocket_launcher));
+                                                     type_rocket_launcher)); //3
+  /**/
+  m_Evaluators.push_back(new RunAwaySearchItem_Evaluator(RunAwayBias));/**/
+  /**/
 }
 
+
+/**/
+//----------------------------- AddGoal_RunAwayGoal ------------------------------------------
+//-----------------------------------------------------------------------------
+void Goal_Think::AddGoal_RunAwaySearchItem()
+{
+    if (notPresent(goal_RunAwaySearchItem))
+    {
+        RemoveAllSubgoals();
+        AddSubgoal(new Goal_RunAwaySearchItem(m_pOwner));
+    }
+}
+/**/
 //----------------------------- dtor ------------------------------------------
 //-----------------------------------------------------------------------------
 Goal_Think::~Goal_Think()

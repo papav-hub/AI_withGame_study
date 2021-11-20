@@ -10,13 +10,13 @@ INCLUDELIB LIBCMTD
 INCLUDELIB OLDNAMES
 
 CONST	SEGMENT
-$SG181571 DB	'invalid argument', 00H
+$SG181573 DB	'invalid argument', 00H
 	ORG $+3
-$SG181572 DB	'%s', 00H
+$SG181574 DB	'%s', 00H
 	ORG $+1
-$SG181573 DB	'C:\Program Files (x86)\Microsoft Visual Studio\2019\Comm'
+$SG181575 DB	'C:\Program Files (x86)\Microsoft Visual Studio\2019\Comm'
 	DB	'unity\VC\Tools\MSVC\14.29.30133\include\xmemory', 00H
-$SG181574 DB	'C', 00H, ':', 00H, '\', 00H, 'P', 00H, 'r', 00H, 'o', 00H
+$SG181576 DB	'C', 00H, ':', 00H, '\', 00H, 'P', 00H, 'r', 00H, 'o', 00H
 	DB	'g', 00H, 'r', 00H, 'a', 00H, 'm', 00H, ' ', 00H, 'F', 00H, 'i'
 	DB	00H, 'l', 00H, 'e', 00H, 's', 00H, ' ', 00H, '(', 00H, 'x', 00H
 	DB	'8', 00H, '6', 00H, ')', 00H, '\', 00H, 'M', 00H, 'i', 00H, 'c'
@@ -33,7 +33,7 @@ $SG181574 DB	'C', 00H, ':', 00H, '\', 00H, 'P', 00H, 'r', 00H, 'o', 00H
 	DB	00H, 'l', 00H, 'u', 00H, 'd', 00H, 'e', 00H, '\', 00H, 'x', 00H
 	DB	'm', 00H, 'e', 00H, 'm', 00H, 'o', 00H, 'r', 00H, 'y', 00H, 00H
 	DB	00H
-$SG181575 DB	's', 00H, 't', 00H, 'd', 00H, ':', 00H, ':', 00H, '_', 00H
+$SG181577 DB	's', 00H, 't', 00H, 'd', 00H, ':', 00H, ':', 00H, '_', 00H
 	DB	'A', 00H, 'l', 00H, 'l', 00H, 'o', 00H, 'c', 00H, 'a', 00H, 't'
 	DB	00H, 'e', 00H, '_', 00H, 'm', 00H, 'a', 00H, 'n', 00H, 'u', 00H
 	DB	'a', 00H, 'l', 00H, 'l', 00H, 'y', 00H, '_', 00H, 'v', 00H, 'e'
@@ -41,11 +41,11 @@ $SG181575 DB	's', 00H, 't', 00H, 'd', 00H, ':', 00H, ':', 00H, '_', 00H
 	DB	'l', 00H, 'i', 00H, 'g', 00H, 'n', 00H, 'e', 00H, 'd', 00H, 00H
 	DB	00H
 	ORG $+2
-$SG181576 DB	'"', 00H, 'i', 00H, 'n', 00H, 'v', 00H, 'a', 00H, 'l', 00H
+$SG181578 DB	'"', 00H, 'i', 00H, 'n', 00H, 'v', 00H, 'a', 00H, 'l', 00H
 	DB	'i', 00H, 'd', 00H, ' ', 00H, 'a', 00H, 'r', 00H, 'g', 00H, 'u'
 	DB	00H, 'm', 00H, 'e', 00H, 'n', 00H, 't', 00H, '"', 00H, 00H, 00H
 	ORG $+2
-$SG181812 DB	'C:\Program Files (x86)\Microsoft Visual Studio\2019\Comm'
+$SG181814 DB	'C:\Program Files (x86)\Microsoft Visual Studio\2019\Comm'
 	DB	'unity\VC\Tools\MSVC\14.29.30133\include\xlocale', 00H
 ?colors@@3QBKB DD 0ffH					; colors
 	DD	0ff0000H
@@ -62,11 +62,11 @@ $SG181812 DB	'C:\Program Files (x86)\Microsoft Visual Studio\2019\Comm'
 	DD	0ffff00H
 	DD	0c8c8c8H
 	DD	0e6e6ffH
-$SG171954 DB	'RG: ', 00H
+$SG171956 DB	'RG: ', 00H
 	ORG $+3
-$SG171956 DB	'RL: ', 00H
+$SG171958 DB	'RL: ', 00H
 	ORG $+3
-$SG171958 DB	'SG: ', 00H
+$SG171960 DB	'SG: ', 00H
 CONST	ENDS
 PUBLIC	?__empty_global_delete@@YAXPAX@Z		; __empty_global_delete
 PUBLIC	?__empty_global_delete@@YAXPAXI@Z		; __empty_global_delete
@@ -3678,7 +3678,7 @@ ___formal$ = 16						; size = 4
 ; 526  :     _Elem* _Ptrdest = static_cast<_Elem*>(_calloc_dbg(_Count, sizeof(_Elem), _CRT_BLOCK, __FILE__, __LINE__));
 
 	push	526					; 0000020eH
-	push	OFFSET $SG181812
+	push	OFFSET $SG181814
 	push	2
 	push	1
 	mov	ecx, DWORD PTR __Count$[ebp]
@@ -4319,11 +4319,11 @@ $LN4@Allocate_m:
 	je	SHORT $LN7@Allocate_m
 	jmp	SHORT $LN2@Allocate_m
 $LN7@Allocate_m:
-	push	OFFSET $SG181571
-	push	OFFSET $SG181572
+	push	OFFSET $SG181573
+	push	OFFSET $SG181574
 	push	0
 	push	142					; 0000008eH
-	push	OFFSET $SG181573
+	push	OFFSET $SG181575
 	push	2
 	call	__CrtDbgReport
 	add	esp, 24					; 00000018H
@@ -4333,9 +4333,9 @@ $LN7@Allocate_m:
 $LN12@Allocate_m:
 	push	0
 	push	142					; 0000008eH
-	push	OFFSET $SG181574
-	push	OFFSET $SG181575
 	push	OFFSET $SG181576
+	push	OFFSET $SG181577
+	push	OFFSET $SG181578
 	call	__invalid_parameter
 	add	esp, 20					; 00000014H
 	xor	ecx, ecx
@@ -19233,7 +19233,7 @@ $LN4@RenderInfo:
 ; 67   :   case type_rail_gun:
 ; 68   :     s="RG: ";break;
 
-	push	OFFSET $SG171954
+	push	OFFSET $SG171956
 	lea	ecx, DWORD PTR _s$[ebp]
 	call	??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::operator=
 	jmp	SHORT $LN2@RenderInfo
@@ -19242,7 +19242,7 @@ $LN5@RenderInfo:
 ; 69   :   case type_rocket_launcher:
 ; 70   :     s="RL: "; break;
 
-	push	OFFSET $SG171956
+	push	OFFSET $SG171958
 	lea	ecx, DWORD PTR _s$[ebp]
 	call	??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::operator=
 	jmp	SHORT $LN2@RenderInfo
@@ -19251,7 +19251,7 @@ $LN6@RenderInfo:
 ; 71   :   case type_shotgun:
 ; 72   :     s="SG: "; break;
 
-	push	OFFSET $SG171958
+	push	OFFSET $SG171960
 	lea	ecx, DWORD PTR _s$[ebp]
 	call	??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::operator=
 $LN2@RenderInfo:

@@ -268,6 +268,12 @@
     <ClCompile Include="..\Common\misc\WindowUtils.cpp">
       <Filter>Common</Filter>
     </ClCompile>
+    <ClCompile Include="Goal_RunAwaySearchItem.cpp">
+      <Filter>AI\goals</Filter>
+    </ClCompile>
+    <ClCompile Include="RunAwaySearchItem_Evaluator.cpp">
+      <Filter>AI\goals</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Raven_Bot.h">
@@ -605,6 +611,14 @@
     </ClInclude>
     <ClInclude Include="..\Common\misc\WindowUtils.h">
       <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="goals\Goal_RunAwaySearchItem.h" />
+    <ClInclude Include="goals\RunAwaySearchItem_Evaluator.h" />
+    <ClInclude Include="Goal_RunAwaySearchItem.h">
+      <Filter>AI\goals</Filter>
+    </ClInclude>
+    <ClInclude Include="RunAwaySearchItem_Evaluator.h">
+      <Filter>AI\goals</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

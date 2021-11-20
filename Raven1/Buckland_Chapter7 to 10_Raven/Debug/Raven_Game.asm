@@ -10,13 +10,13 @@ INCLUDELIB LIBCMTD
 INCLUDELIB OLDNAMES
 
 CONST	SEGMENT
-$SG198832 DB	'invalid argument', 00H
+$SG198834 DB	'invalid argument', 00H
 	ORG $+3
-$SG198833 DB	'%s', 00H
+$SG198835 DB	'%s', 00H
 	ORG $+1
-$SG198834 DB	'C:\Program Files (x86)\Microsoft Visual Studio\2019\Comm'
+$SG198836 DB	'C:\Program Files (x86)\Microsoft Visual Studio\2019\Comm'
 	DB	'unity\VC\Tools\MSVC\14.29.30133\include\xmemory', 00H
-$SG198835 DB	'C', 00H, ':', 00H, '\', 00H, 'P', 00H, 'r', 00H, 'o', 00H
+$SG198837 DB	'C', 00H, ':', 00H, '\', 00H, 'P', 00H, 'r', 00H, 'o', 00H
 	DB	'g', 00H, 'r', 00H, 'a', 00H, 'm', 00H, ' ', 00H, 'F', 00H, 'i'
 	DB	00H, 'l', 00H, 'e', 00H, 's', 00H, ' ', 00H, '(', 00H, 'x', 00H
 	DB	'8', 00H, '6', 00H, ')', 00H, '\', 00H, 'M', 00H, 'i', 00H, 'c'
@@ -33,7 +33,7 @@ $SG198835 DB	'C', 00H, ':', 00H, '\', 00H, 'P', 00H, 'r', 00H, 'o', 00H
 	DB	00H, 'l', 00H, 'u', 00H, 'd', 00H, 'e', 00H, '\', 00H, 'x', 00H
 	DB	'm', 00H, 'e', 00H, 'm', 00H, 'o', 00H, 'r', 00H, 'y', 00H, 00H
 	DB	00H
-$SG198836 DB	's', 00H, 't', 00H, 'd', 00H, ':', 00H, ':', 00H, '_', 00H
+$SG198838 DB	's', 00H, 't', 00H, 'd', 00H, ':', 00H, ':', 00H, '_', 00H
 	DB	'A', 00H, 'l', 00H, 'l', 00H, 'o', 00H, 'c', 00H, 'a', 00H, 't'
 	DB	00H, 'e', 00H, '_', 00H, 'm', 00H, 'a', 00H, 'n', 00H, 'u', 00H
 	DB	'a', 00H, 'l', 00H, 'l', 00H, 'y', 00H, '_', 00H, 'v', 00H, 'e'
@@ -41,7 +41,7 @@ $SG198836 DB	's', 00H, 't', 00H, 'd', 00H, ':', 00H, ':', 00H, '_', 00H
 	DB	'l', 00H, 'i', 00H, 'g', 00H, 'n', 00H, 'e', 00H, 'd', 00H, 00H
 	DB	00H
 	ORG $+2
-$SG198837 DB	'"', 00H, 'i', 00H, 'n', 00H, 'v', 00H, 'a', 00H, 'l', 00H
+$SG198839 DB	'"', 00H, 'i', 00H, 'n', 00H, 'v', 00H, 'a', 00H, 'l', 00H
 	DB	'i', 00H, 'd', 00H, ' ', 00H, 'a', 00H, 'r', 00H, 'g', 00H, 'u'
 	DB	00H, 'm', 00H, 'e', 00H, 'n', 00H, 't', 00H, '"', 00H, 00H, 00H
 	ORG $+2
@@ -61,18 +61,18 @@ $SG198837 DB	'"', 00H, 'i', 00H, 'n', 00H, 'v', 00H, 'a', 00H, 'l', 00H
 	DD	0c8c8c8H
 	DD	0e6e6ffH
 	ORG $+4
-$SG199308 DB	'C:\Program Files (x86)\Microsoft Visual Studio\2019\Comm'
+$SG199310 DB	'C:\Program Files (x86)\Microsoft Visual Studio\2019\Comm'
 	DB	'unity\VC\Tools\MSVC\14.29.30133\include\xlocale', 00H
-$SG183092 DB	'StartMap', 00H
+$SG183094 DB	'StartMap', 00H
 	ORG $+3
-$SG184664 DB	'Map has no spawn points!', 00H
+$SG184666 DB	'Map has no spawn points!', 00H
 	ORG $+3
-$SG184789 DB	'GraveLifetime', 00H
+$SG184791 DB	'GraveLifetime', 00H
 	ORG $+2
-$SG184791 DB	'MaxSearchCyclesPerUpdateStep', 00H
+$SG184793 DB	'MaxSearchCyclesPerUpdateStep', 00H
 	ORG $+3
-$SG184794 DB	'NumBots', 00H
-$SG185830 DB	'Queuing', 00H
+$SG184796 DB	'NumBots', 00H
+$SG185832 DB	'Queuing', 00H
 CONST	ENDS
 PUBLIC	?__empty_global_delete@@YAXPAX@Z		; __empty_global_delete
 PUBLIC	?__empty_global_delete@@YAXPAXI@Z		; __empty_global_delete
@@ -5127,11 +5127,11 @@ $LN4@Allocate_m:
 	je	SHORT $LN7@Allocate_m
 	jmp	SHORT $LN2@Allocate_m
 $LN7@Allocate_m:
-	push	OFFSET $SG198832
-	push	OFFSET $SG198833
+	push	OFFSET $SG198834
+	push	OFFSET $SG198835
 	push	0
 	push	142					; 0000008eH
-	push	OFFSET $SG198834
+	push	OFFSET $SG198836
 	push	2
 	call	__CrtDbgReport
 	add	esp, 24					; 00000018H
@@ -5141,9 +5141,9 @@ $LN7@Allocate_m:
 $LN12@Allocate_m:
 	push	0
 	push	142					; 0000008eH
-	push	OFFSET $SG198835
-	push	OFFSET $SG198836
 	push	OFFSET $SG198837
+	push	OFFSET $SG198838
+	push	OFFSET $SG198839
 	call	__invalid_parameter
 	add	esp, 20					; 00000014H
 	xor	ecx, ecx
@@ -27089,7 +27089,7 @@ $LN9@LoadMap:
 	mov	DWORD PTR __$EHRec$[ebp+8], 0
 	cmp	DWORD PTR $T6[ebp], 0
 	je	SHORT $LN10@LoadMap
-	push	OFFSET $SG184789
+	push	OFFSET $SG184791
 	call	?Instance@Raven_Scriptor@@SAPAV1@XZ	; Raven_Scriptor::Instance
 	mov	ecx, eax
 	call	?GetDouble@Scriptor@@QAENPAD@Z		; Scriptor::GetDouble
@@ -27118,7 +27118,7 @@ $LN11@LoadMap:
 	mov	DWORD PTR __$EHRec$[ebp+8], 1
 	cmp	DWORD PTR $T4[ebp], 0
 	je	SHORT $LN12@LoadMap
-	push	OFFSET $SG184791
+	push	OFFSET $SG184793
 	call	?Instance@Raven_Scriptor@@SAPAV1@XZ	; Raven_Scriptor::Instance
 	mov	ecx, eax
 	call	?GetInt@Scriptor@@QAEHPAD@Z		; Scriptor::GetInt
@@ -27185,7 +27185,7 @@ $LN15@LoadMap:
 ; 398  :   { 
 ; 399  :     AddBots(script->GetInt("NumBots"));
 
-	push	OFFSET $SG184794
+	push	OFFSET $SG184796
 	call	?Instance@Raven_Scriptor@@SAPAV1@XZ	; Raven_Scriptor::Instance
 	mov	ecx, eax
 	call	?GetInt@Scriptor@@QAEHPAD@Z		; Scriptor::GetInt
@@ -28650,7 +28650,7 @@ $LN23@Render:
 
 ; 793  :       gdi->TextAtPos(GetClientCursorPosition(), "Queuing");
 
-	push	OFFSET $SG185830
+	push	OFFSET $SG185832
 	lea	ecx, DWORD PTR $T16[ebp]
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	BYTE PTR __$EHRec$[ebp+8], 4
@@ -29013,7 +29013,7 @@ __$EHRec$ = -12						; size = 12
 ; 44   :   //load in the default map
 ; 45   :   LoadMap(script->GetString("StartMap"));
 
-	push	OFFSET $SG183092
+	push	OFFSET $SG183094
 	lea	eax, DWORD PTR $T2[ebp]
 	push	eax
 	call	?Instance@Raven_Scriptor@@SAPAV1@XZ	; Raven_Scriptor::Instance
@@ -29298,7 +29298,7 @@ _pBot$ = 8						; size = 4
 ; 205  :   {
 ; 206  :     ErrorBox("Map has no spawn points!"); return false;
 
-	push	OFFSET $SG184664
+	push	OFFSET $SG184666
 	call	?ErrorBox@@YAXPAD@Z			; ErrorBox
 	add	esp, 4
 	xor	al, al
