@@ -20,7 +20,7 @@ class Raven_Bot;
 
 
                                                
-class Raven_PathPlanner
+class Raven_PathPlanner // 실제 길 찾기
 {
 private:
 
@@ -32,7 +32,7 @@ public:
   //for ease of use typdef the graph edge/node types used by the navgraph
   typedef Raven_Map::NavGraph::EdgeType           EdgeType;
   typedef Raven_Map::NavGraph::NodeType           NodeType;
-  typedef std::list<PathEdge>                     Path;
+  typedef std::list<PathEdge>                     Path; // 길찾기 결과
   
 private:
 
@@ -51,7 +51,7 @@ private:
 
   //returns the index of the closest visible and unobstructed graph node to
   //the given position
-  int   GetClosestNodeToPosition(Vector2D pos)const;
+  int   GetClosestNodeToPosition(Vector2D pos)const; // 이 지점의 가장 가까운 Node 찾기
 
   //smooths a path by removing extraneous edges. (may not remove all
   //extraneous edges)
@@ -75,11 +75,11 @@ public:
 
   //creates an instance of the A* time-sliced search and registers it with
   //the path manager
-  bool       RequestPathToItem(unsigned int ItemType);
+  bool       RequestPathToItem(unsigned int ItemType); // Dijkstra로 아이템 찾기
 
   //creates an instance of the Dijkstra's time-sliced search and registers 
   //it with the path manager
-  bool       RequestPathToPosition(Vector2D TargetPos);
+  bool       RequestPathToPosition(Vector2D TargetPos); // A*로 target 찾기
 
   //called by an agent after it has been notified that a search has terminated
   //successfully. The method extracts the path from m_pCurrentSearch, adds
@@ -102,7 +102,7 @@ public:
   //of the currently assigned search algorithm. When a search is terminated
   //the method messages the owner with either the msg_NoPathAvailable or
   //msg_PathReady messages
-  int        CycleOnce()const;
+  int        CycleOnce()const; // 실제 호출되는 함수
 
   Vector2D   GetDestination()const{return m_vDestinationPos;}
   void       SetDestination(Vector2D NewPos){m_vDestinationPos = NewPos;}

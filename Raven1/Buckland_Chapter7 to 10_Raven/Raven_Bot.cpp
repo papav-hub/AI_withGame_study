@@ -118,28 +118,29 @@ void Raven_Bot::Spawn(Vector2D pos)
 
 //-------------------------------- Update -------------------------------------
 //
-void Raven_Bot::Update()
+void Raven_Bot::Update() //////////////////////////////////////////////////////////////////////////////////////////////////3번 과제
 {
   //process the currently active goal. Note this is required even if the bot
   //is under user control. This is because a goal is created whenever a user 
   //clicks on an area of the map that necessitates a path planning request.
-  m_pBrain->Process();
+  m_pBrain->Process(); 
+  // brain = think
   
   //Calculate the steering force and update the bot's velocity and position
   UpdateMovement();
 
   //if the bot is under AI control but not scripted
-  if (!isPossessed())
+  if (!isPossessed()) // 자동 상태라면 // player가 소유하지않았다면
   {           
     //examine all the opponents in the bots sensory memory and select one
     //to be the current target
-    if (m_pTargetSelectionRegulator->isReady())
+    if (m_pTargetSelectionRegulator->isReady()) // 시점을 다르게, 서로 동시에 update하지 않도록 해줌
     {      
       m_pTargSys->Update();
     }
 
     //appraise and arbitrate between all possible high level goals
-    if (m_pGoalArbitrationRegulator->isReady())
+    if (m_pGoalArbitrationRegulator->isReady()) // 생각은 매번 하지 않음 // 생각할 시간이 되어야지 생각한다.
     {
        m_pBrain->Arbitrate(); 
     }
@@ -218,10 +219,10 @@ bool Raven_Bot::isReadyForTriggerUpdate()const
 bool Raven_Bot::HandleMessage(const Telegram& msg)
 {
   //first see if the current goal accepts the message
-  if (GetBrain()->HandleMessage(msg)) return true;
+  if (GetBrain()->HandleMessage(msg)) return true; // msg오면 봇에게 넘겼다가 안되면
  
   //handle any messages not handles by the goals
-  switch(msg.Msg)
+  switch(msg.Msg) // 자기가 처리
   {
   case Msg_TakeThatMF:
 

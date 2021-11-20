@@ -94,7 +94,7 @@ class NavGraphEdge : public GraphEdge
 public:
   
   //examples of typical flags
-  enum
+  enum  // 행동 타입
   {
     normal            = 0,
     swim              = 1 << 0,

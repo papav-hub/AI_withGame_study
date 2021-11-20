@@ -25,13 +25,13 @@ CONST	SEGMENT
 	DD	0ffff00H
 	DD	0c8c8c8H
 	DD	0e6e6ffH
-$SG170359 DB	'invalid argument', 00H
+$SG170353 DB	'invalid argument', 00H
 	ORG $+3
-$SG170360 DB	'%s', 00H
+$SG170354 DB	'%s', 00H
 	ORG $+5
-$SG170361 DB	'C:\Program Files (x86)\Microsoft Visual Studio\2019\Comm'
+$SG170355 DB	'C:\Program Files (x86)\Microsoft Visual Studio\2019\Comm'
 	DB	'unity\VC\Tools\MSVC\14.29.30133\include\xmemory', 00H
-$SG170362 DB	'C', 00H, ':', 00H, '\', 00H, 'P', 00H, 'r', 00H, 'o', 00H
+$SG170356 DB	'C', 00H, ':', 00H, '\', 00H, 'P', 00H, 'r', 00H, 'o', 00H
 	DB	'g', 00H, 'r', 00H, 'a', 00H, 'm', 00H, ' ', 00H, 'F', 00H, 'i'
 	DB	00H, 'l', 00H, 'e', 00H, 's', 00H, ' ', 00H, '(', 00H, 'x', 00H
 	DB	'8', 00H, '6', 00H, ')', 00H, '\', 00H, 'M', 00H, 'i', 00H, 'c'
@@ -48,7 +48,7 @@ $SG170362 DB	'C', 00H, ':', 00H, '\', 00H, 'P', 00H, 'r', 00H, 'o', 00H
 	DB	00H, 'l', 00H, 'u', 00H, 'd', 00H, 'e', 00H, '\', 00H, 'x', 00H
 	DB	'm', 00H, 'e', 00H, 'm', 00H, 'o', 00H, 'r', 00H, 'y', 00H, 00H
 	DB	00H
-$SG170363 DB	's', 00H, 't', 00H, 'd', 00H, ':', 00H, ':', 00H, '_', 00H
+$SG170357 DB	's', 00H, 't', 00H, 'd', 00H, ':', 00H, ':', 00H, '_', 00H
 	DB	'A', 00H, 'l', 00H, 'l', 00H, 'o', 00H, 'c', 00H, 'a', 00H, 't'
 	DB	00H, 'e', 00H, '_', 00H, 'm', 00H, 'a', 00H, 'n', 00H, 'u', 00H
 	DB	'a', 00H, 'l', 00H, 'l', 00H, 'y', 00H, '_', 00H, 'v', 00H, 'e'
@@ -56,7 +56,7 @@ $SG170363 DB	's', 00H, 't', 00H, 'd', 00H, ':', 00H, ':', 00H, '_', 00H
 	DB	'l', 00H, 'i', 00H, 'g', 00H, 'n', 00H, 'e', 00H, 'd', 00H, 00H
 	DB	00H
 	ORG $+2
-$SG170364 DB	'"', 00H, 'i', 00H, 'n', 00H, 'v', 00H, 'a', 00H, 'l', 00H
+$SG170358 DB	'"', 00H, 'i', 00H, 'n', 00H, 'v', 00H, 'a', 00H, 'l', 00H
 	DB	'i', 00H, 'd', 00H, ' ', 00H, 'a', 00H, 'r', 00H, 'g', 00H, 'u'
 	DB	00H, 'm', 00H, 'e', 00H, 'n', 00H, 't', 00H, '"', 00H, 00H, 00H
 CONST	ENDS
@@ -2606,11 +2606,11 @@ $LN4@Allocate_m:
 	je	SHORT $LN7@Allocate_m
 	jmp	SHORT $LN2@Allocate_m
 $LN7@Allocate_m:
-	push	OFFSET $SG170359
-	push	OFFSET $SG170360
+	push	OFFSET $SG170353
+	push	OFFSET $SG170354
 	push	0
 	push	142					; 0000008eH
-	push	OFFSET $SG170361
+	push	OFFSET $SG170355
 	push	2
 	call	__CrtDbgReport
 	add	esp, 24					; 00000018H
@@ -2620,9 +2620,9 @@ $LN7@Allocate_m:
 $LN12@Allocate_m:
 	push	0
 	push	142					; 0000008eH
-	push	OFFSET $SG170362
-	push	OFFSET $SG170363
-	push	OFFSET $SG170364
+	push	OFFSET $SG170356
+	push	OFFSET $SG170357
+	push	OFFSET $SG170358
 	call	__invalid_parameter
 	add	esp, 20					; 00000014H
 	xor	ecx, ecx
@@ -6561,7 +6561,7 @@ $LN2@ProcessSub:
 	je	SHORT $LN3@ProcessSub
 $LN4@ProcessSub:
 
-; 103  :          (m_SubGoals.front()->isComplete() || m_SubGoals.front()->hasFailed()))
+; 103  :          (m_SubGoals.front()->isComplete() || m_SubGoals.front()->hasFailed())) // Goal이 끝나면 terminate, delete, 다음거를 꺼낸다.
 ; 104  :   {    
 ; 105  :     m_SubGoals.front()->Terminate();
 
@@ -6616,7 +6616,7 @@ $LN3@ProcessSub:
 
 ; 109  : 
 ; 110  :   //if any subgoals remain, process the one at the front of the list
-; 111  :   if (!m_SubGoals.empty())
+; 111  :   if (!m_SubGoals.empty()) // Goal이 비었는지 조사 // 비지 않았으면 다음을 process
 
 	mov	ecx, DWORD PTR _this$[ebp]
 	add	ecx, 16					; 00000010H
@@ -6649,7 +6649,7 @@ $LN3@ProcessSub:
 ; 117  :     //reports 'completed' *and* the subgoal list contains additional goals.When
 ; 118  :     //this is the case, to ensure the parent keeps processing its subgoal list
 ; 119  :     //we must return the 'active' status.
-; 120  :     if (StatusOfSubGoals == completed && m_SubGoals.size() > 1)
+; 120  :     if (StatusOfSubGoals == completed && m_SubGoals.size() > 1) // 끝났는데 subGoal size가 1보다 크다 = 해야할 일이 더 있다.
 
 	cmp	DWORD PTR _StatusOfSubGoals$2[ebp], 2
 	jne	SHORT $LN7@ProcessSub
@@ -6660,7 +6660,7 @@ $LN3@ProcessSub:
 	jbe	SHORT $LN7@ProcessSub
 
 ; 121  :     {
-; 122  :       return active;
+; 122  :       return active; // 끝나지 않았다고 알려줌
 
 	xor	eax, eax
 	jmp	SHORT $LN1@ProcessSub
@@ -6682,7 +6682,7 @@ $LN5@ProcessSub:
 ; 128  :   //no more subgoals to process - return 'completed'
 ; 129  :   else
 ; 130  :   {
-; 131  :     return completed;
+; 131  :     return completed; // 비었으면 끝났따
 
 	mov	eax, 2
 $LN1@ProcessSub:

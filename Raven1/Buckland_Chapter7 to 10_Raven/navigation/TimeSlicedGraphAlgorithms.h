@@ -160,7 +160,10 @@ public:
 
 //-----------------------------------------------------------------------------
 template <class graph_type, class heuristic>
-int Graph_SearchAStar_TS<graph_type, heuristic>::CycleOnce()
+int Graph_SearchAStar_TS<graph_type, heuristic>::CycleOnce() // A*의 ts 버전이다. 우리가 아는거랑 조금 다름
+// 우리가 아는 것 : 소스 노드를 먼저 넣고, 큐가 비어있지 않을 경우에 while루프가 계속 돈다. = 큐를 끝까지 돌린다. -> Game상의 문제(봇 하나가 시간 독점)
+// ts = Time Slice
+// ts버전 : 큐를 바깥으로 빼서 시작 = 한번밖에 돌지 않는다.(=끝까지 안돈다.)
 {
   //if the PQ is empty the target has not been found
   if (m_pPQ->empty())
@@ -169,10 +172,10 @@ int Graph_SearchAStar_TS<graph_type, heuristic>::CycleOnce()
   }
 
   //get lowest cost node from the queue
-  int NextClosestNode = m_pPQ->Pop();
+  int NextClosestNode = m_pPQ->Pop(); // 큐에서 pop을 한번만! 한다
 
   //put the node on the SPT
-  m_ShortestPathTree[NextClosestNode] = m_SearchFrontier[NextClosestNode];
+  m_ShortestPathTree[NextClosestNode] = m_SearchFrontier[NextClosestNode]; // 여기서부터는 꺼낸거 자식틀 처리하는 거임
 
   //if the target has been found exit
   if (NextClosestNode == m_iTarget)
@@ -219,7 +222,7 @@ int Graph_SearchAStar_TS<graph_type, heuristic>::CycleOnce()
   }
   
   //there are still nodes to explore
-  return search_incomplete;
+  return search_incomplete; // search가 아직 미완성이다 하고 끝남.(=시간을 다 쓰지 않음/한번만 돈다.)
 }
 
 //-----------------------------------------------------------------------------
@@ -358,7 +361,8 @@ public:
 
 //-----------------------------------------------------------------------------
 template <class graph_type, class termination_condition>
-int Graph_SearchDijkstras_TS<graph_type, termination_condition>::CycleOnce()
+int Graph_SearchDijkstras_TS<graph_type, termination_condition>::CycleOnce() // 다익스트라의 Cycle Once
+// 여기도 큐를 밖에 선언하고 큐에서 하나만 꺼내서 처리함
 {
   //if the PQ is empty the target has not been found
   if (m_pPQ->empty())
@@ -373,7 +377,7 @@ int Graph_SearchDijkstras_TS<graph_type, termination_condition>::CycleOnce()
   m_ShortestPathTree[NextClosestNode] = m_SearchFrontier[NextClosestNode];
 
   //if the target has been found exit
-  if (termination_condition::isSatisfied(m_Graph, m_iTarget, NextClosestNode))
+  if (termination_condition::isSatisfied(m_Graph, m_iTarget, NextClosestNode)) // 꺼낸 것이 target이라면 끝남
   {
     //make a note of the node index that has satisfied the condition. This
     //is so we can work backwards from the index to extract the path from
@@ -424,7 +428,7 @@ int Graph_SearchDijkstras_TS<graph_type, termination_condition>::CycleOnce()
   }
   
   //there are still nodes to explore
-  return search_incomplete;
+  return search_incomplete; // 혹은 미완성으로 끝남
 }
 
 //-----------------------------------------------------------------------------

@@ -75,9 +75,10 @@ void Goal_Think::Activate()
 //-----------------------------------------------------------------------------
 int Goal_Think::Process()
 {
-  ActivateIfInactive();
+  ActivateIfInactive(); // 프로세스에 들어왔을 때 꺼져있으면 초기화 // state에서 enter하면서 초기화 하는 것과 비슷하다. // Activate()에 해당한다.
+  // Goal마다 하는 일이 다르다. Pattern은 비슷하다.
   
-  int SubgoalStatus = ProcessSubgoals();
+  int SubgoalStatus = ProcessSubgoals(); // 주요 사항 // think가 거느리고 있는 부모를 처리한다.
 
   if (SubgoalStatus == completed || SubgoalStatus == failed)
   {
@@ -104,7 +105,7 @@ void Goal_Think::Arbitrate()
   GoalEvaluators::iterator curDes = m_Evaluators.begin();
   for (curDes; curDes != m_Evaluators.end(); ++curDes)
   {
-    double desirabilty = (*curDes)->CalculateDesirability(m_pOwner);
+    double desirabilty = (*curDes)->CalculateDesirability(m_pOwner); // 점수 높은거 계산하기
 
     if (desirabilty >= best)
     {
@@ -124,7 +125,8 @@ void Goal_Think::Arbitrate()
 //  returns true if the goal type passed as a parameter is the same as this
 //  goal or any of its subgoals
 //-----------------------------------------------------------------------------
-bool Goal_Think::notPresent(unsigned int GoalType)const
+bool Goal_Think::notPresent(unsigned int GoalType)const /////////////// 내가 지금 AttackTarget 하고 있음? 물어봄
+// 내가 판단할 때가 되었을때 우선순위가 똑같은지 파악
 {
   if (!m_SubGoals.empty())
   {
@@ -141,10 +143,10 @@ void Goal_Think::AddGoal_MoveToPosition(Vector2D pos)
 
 void Goal_Think::AddGoal_Explore()
 {
-  if (notPresent(goal_explore))
+  if (notPresent(goal_explore)) // 우선순위가 바뀜
   {
-    RemoveAllSubgoals();
-    AddSubgoal( new Goal_Explore(m_pOwner));
+    RemoveAllSubgoals(); // 다 지우고 
+    AddSubgoal( new Goal_Explore(m_pOwner)); // 다른 서브 골을 넣는다.
   }
 }
 
@@ -157,9 +159,9 @@ void Goal_Think::AddGoal_GetItem(unsigned int ItemType)
   }
 }
 
-void Goal_Think::AddGoal_AttackTarget()
+void Goal_Think::AddGoal_AttackTarget()////////////////////////////////////////////
 {
-  if (notPresent(goal_attack_target))
+  if (notPresent(goal_attack_target)) 
   {
     RemoveAllSubgoals();
     AddSubgoal( new Goal_AttackTarget(m_pOwner));

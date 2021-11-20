@@ -34,9 +34,14 @@ void Goal_AttackTarget::Activate()
   {
     //if the bot has space to strafe then do so
     Vector2D dummy;
-    if (m_pOwner->canStepLeft(dummy) || m_pOwner->canStepRight(dummy))
+    if (m_pOwner->canStepLeft(dummy) || m_pOwner->canStepRight(dummy)) // 요청
     {
-      AddSubgoal(new Goal_DodgeSideToSide(m_pOwner));
+      AddSubgoal(new Goal_DodgeSideToSide(m_pOwner)); // 요청하고 바로 결과가 안오니까 
+      // 결과 올때 까지 일단 돌격해버림
+      /////////////////////////////////////////////////////////////////////////////////////////////이거 고치는게 2번째 과제///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+      // MaxSearchCyclesPerUpdateStep을 극단적으로 줄이면 차이점을 볼 수 있다.
+      // CycleOnce의 일부를 미리 받아와서 쓰는거가 해답임 > 그러면 돌진하지 않아도 된다. 이거 해답임!!!!!!!!!!!!!!!!
+      // 
     }
 
     //if not able to strafe, head directly at the target's position 

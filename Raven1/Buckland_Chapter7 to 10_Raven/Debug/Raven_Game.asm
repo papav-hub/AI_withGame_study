@@ -19295,7 +19295,7 @@ __$EHRec$ = -12						; size = 12
 	mov	DWORD PTR fs:0, eax
 	mov	DWORD PTR _this$[ebp], ecx
 
-; 64   :   int NumCyclesRemaining = m_iNumSearchCyclesPerUpdate;
+; 64   :   int NumCyclesRemaining = m_iNumSearchCyclesPerUpdate; // 할당한 시간 받기
 
 	mov	eax, DWORD PTR _this$[ebp]
 	mov	ecx, DWORD PTR [eax+12]
@@ -19304,7 +19304,7 @@ __$EHRec$ = -12						; size = 12
 ; 65   : 
 ; 66   :   //iterate through the search requests until either all requests have been
 ; 67   :   //fulfilled or there are no search cycles remaining for this update-step.
-; 68   :   std::list<path_planner*>::iterator curPath = m_SearchRequests.begin();
+; 68   :   std::list<path_planner*>::iterator curPath = m_SearchRequests.begin(); 
 
 	lea	edx, DWORD PTR _curPath$[ebp]
 	push	edx
@@ -19313,7 +19313,7 @@ __$EHRec$ = -12						; size = 12
 	mov	DWORD PTR __$EHRec$[ebp+8], 0
 $LN2@UpdateSear:
 
-; 69   :   while (NumCyclesRemaining-- && !m_SearchRequests.empty())
+; 69   :   while (NumCyclesRemaining-- && !m_SearchRequests.empty())// 할당한 시간 만큼만 while문이 돈다.
 
 	mov	eax, DWORD PTR _NumCyclesRemaining$[ebp]
 	mov	DWORD PTR tv71[ebp], eax
@@ -19330,7 +19330,7 @@ $LN2@UpdateSear:
 
 ; 70   :   {
 ; 71   :     //make one search cycle of this path request
-; 72   :     int result = (*curPath)->CycleOnce();
+; 72   :     int result = (*curPath)->CycleOnce(); // pathPlanner에 설정된 CycleOnce를 한번씩 돌려준다.(A* or Dji)
 
 	lea	ecx, DWORD PTR _curPath$[ebp]
 	call	??D?$_List_iterator@V?$_List_val@U?$_List_simple_types@PAVRaven_PathPlanner@@@std@@@std@@@std@@QBEAAPAVRaven_PathPlanner@@XZ ; std::_List_iterator<std::_List_val<std::_List_simple_types<Raven_PathPlanner *> > >::operator*
@@ -19338,9 +19338,10 @@ $LN2@UpdateSear:
 	call	?CycleOnce@Raven_PathPlanner@@QBEHXZ	; Raven_PathPlanner::CycleOnce
 	mov	DWORD PTR _result$7[ebp], eax
 
-; 73   : 
-; 74   :     //if the search has terminated remove from the list
-; 75   :     if ( (result == target_found) || (result == target_not_found) )
+; 73   :     // list에서 하나씩 꺼내서 CycleOnce를 돌려준다. : Manager가 하는 일
+; 74   : 
+; 75   :     //if the search has terminated remove from the list
+; 76   :     if ( (result == target_found) || (result == target_not_found) ) // 한번 돌았는데 target이 없는 경우
 
 	cmp	DWORD PTR _result$7[ebp], 0
 	je	SHORT $LN6@UpdateSear
@@ -19348,9 +19349,9 @@ $LN2@UpdateSear:
 	jne	SHORT $LN4@UpdateSear
 $LN6@UpdateSear:
 
-; 76   :     {
-; 77   :       //remove this path from the path list
-; 78   :       curPath = m_SearchRequests.erase(curPath);       
+; 77   :     {
+; 78   :       //remove this path from the path list
+; 79   :       curPath = m_SearchRequests.erase(curPath);  // 걔는 끝났으니까 지우고 list의 다음 차례를 돌려줌     
 
 	sub	esp, 12					; 0000000cH
 	mov	ecx, esp
@@ -19372,25 +19373,25 @@ $LN6@UpdateSear:
 	lea	ecx, DWORD PTR $T5[ebp]
 	call	??1?$_List_iterator@V?$_List_val@U?$_List_simple_types@PAVRaven_PathPlanner@@@std@@@std@@@std@@QAE@XZ
 
-; 79   :     }
+; 80   :     }
 
 	jmp	SHORT $LN5@UpdateSear
 $LN4@UpdateSear:
 
-; 80   :     //move on to the next
-; 81   :     else
-; 82   :     {
-; 83   :       ++curPath;
+; 81   :     //move on to the next
+; 82   :     else // 끝나지 않았으면 지우지 않고 다음 차례를 돌림
+; 83   :     {
+; 84   :       ++curPath;
 
 	lea	ecx, DWORD PTR _curPath$[ebp]
 	call	??E?$_List_iterator@V?$_List_val@U?$_List_simple_types@PAVRaven_PathPlanner@@@std@@@std@@@std@@QAEAAV01@XZ ; std::_List_iterator<std::_List_val<std::_List_simple_types<Raven_PathPlanner *> > >::operator++
 $LN5@UpdateSear:
 
-; 84   :     }
-; 85   : 
-; 86   :     //the iterator may now be pointing to the end of the list. If this is so,
-; 87   :     // it must be reset to the beginning.
-; 88   :     if (curPath == m_SearchRequests.end())
+; 85   :     }
+; 86   : 
+; 87   :     //the iterator may now be pointing to the end of the list. If this is so,
+; 88   :     // it must be reset to the beginning.
+; 89   :     if (curPath == m_SearchRequests.end())
 
 	lea	ecx, DWORD PTR $T3[ebp]
 	push	ecx
@@ -19408,8 +19409,8 @@ $LN5@UpdateSear:
 	test	eax, eax
 	je	SHORT $LN7@UpdateSear
 
-; 89   :     {
-; 90   :       curPath = m_SearchRequests.begin();
+; 90   :     {
+; 91   :       curPath = m_SearchRequests.begin();
 
 	lea	ecx, DWORD PTR $T2[ebp]
 	push	ecx
@@ -19424,14 +19425,14 @@ $LN5@UpdateSear:
 	call	??1?$_List_iterator@V?$_List_val@U?$_List_simple_types@PAVRaven_PathPlanner@@@std@@@std@@@std@@QAE@XZ
 $LN7@UpdateSear:
 
-; 91   :     }
-; 92   : 
-; 93   :   }//end while
+; 92   :     }
+; 93   : 
+; 94   :   }//end while
 
 	jmp	$LN2@UpdateSear
 $LN3@UpdateSear:
 
-; 94   : }
+; 95   : }
 
 	mov	DWORD PTR __$EHRec$[ebp+8], -1
 	lea	ecx, DWORD PTR _curPath$[ebp]
@@ -19501,7 +19502,7 @@ _NumCyclesPerUpdate$ = 8				; size = 4
 ??0?$PathManager@VRaven_PathPlanner@@@@QAE@I@Z PROC	; PathManager<Raven_PathPlanner>::PathManager<Raven_PathPlanner>, COMDAT
 ; _this$ = ecx
 
-; 33   :   PathManager(unsigned int NumCyclesPerUpdate):m_iNumSearchCyclesPerUpdate(NumCyclesPerUpdate){}
+; 34   :   PathManager(unsigned int NumCyclesPerUpdate):m_iNumSearchCyclesPerUpdate(NumCyclesPerUpdate){}
 
 	push	ebp
 	mov	ebp, esp

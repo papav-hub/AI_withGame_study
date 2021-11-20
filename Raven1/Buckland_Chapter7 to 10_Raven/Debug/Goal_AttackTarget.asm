@@ -25,13 +25,13 @@ CONST	SEGMENT
 	DD	0ffff00H
 	DD	0c8c8c8H
 	DD	0e6e6ffH
-$SG168868 DB	'invalid argument', 00H
+$SG168862 DB	'invalid argument', 00H
 	ORG $+3
-$SG168869 DB	'%s', 00H
+$SG168863 DB	'%s', 00H
 	ORG $+5
-$SG168870 DB	'C:\Program Files (x86)\Microsoft Visual Studio\2019\Comm'
+$SG168864 DB	'C:\Program Files (x86)\Microsoft Visual Studio\2019\Comm'
 	DB	'unity\VC\Tools\MSVC\14.29.30133\include\xmemory', 00H
-$SG168871 DB	'C', 00H, ':', 00H, '\', 00H, 'P', 00H, 'r', 00H, 'o', 00H
+$SG168865 DB	'C', 00H, ':', 00H, '\', 00H, 'P', 00H, 'r', 00H, 'o', 00H
 	DB	'g', 00H, 'r', 00H, 'a', 00H, 'm', 00H, ' ', 00H, 'F', 00H, 'i'
 	DB	00H, 'l', 00H, 'e', 00H, 's', 00H, ' ', 00H, '(', 00H, 'x', 00H
 	DB	'8', 00H, '6', 00H, ')', 00H, '\', 00H, 'M', 00H, 'i', 00H, 'c'
@@ -48,7 +48,7 @@ $SG168871 DB	'C', 00H, ':', 00H, '\', 00H, 'P', 00H, 'r', 00H, 'o', 00H
 	DB	00H, 'l', 00H, 'u', 00H, 'd', 00H, 'e', 00H, '\', 00H, 'x', 00H
 	DB	'm', 00H, 'e', 00H, 'm', 00H, 'o', 00H, 'r', 00H, 'y', 00H, 00H
 	DB	00H
-$SG168872 DB	's', 00H, 't', 00H, 'd', 00H, ':', 00H, ':', 00H, '_', 00H
+$SG168866 DB	's', 00H, 't', 00H, 'd', 00H, ':', 00H, ':', 00H, '_', 00H
 	DB	'A', 00H, 'l', 00H, 'l', 00H, 'o', 00H, 'c', 00H, 'a', 00H, 't'
 	DB	00H, 'e', 00H, '_', 00H, 'm', 00H, 'a', 00H, 'n', 00H, 'u', 00H
 	DB	'a', 00H, 'l', 00H, 'l', 00H, 'y', 00H, '_', 00H, 'v', 00H, 'e'
@@ -56,7 +56,7 @@ $SG168872 DB	's', 00H, 't', 00H, 'd', 00H, ':', 00H, ':', 00H, '_', 00H
 	DB	'l', 00H, 'i', 00H, 'g', 00H, 'n', 00H, 'e', 00H, 'd', 00H, 00H
 	DB	00H
 	ORG $+2
-$SG168873 DB	'"', 00H, 'i', 00H, 'n', 00H, 'v', 00H, 'a', 00H, 'l', 00H
+$SG168867 DB	'"', 00H, 'i', 00H, 'n', 00H, 'v', 00H, 'a', 00H, 'l', 00H
 	DB	'i', 00H, 'd', 00H, ' ', 00H, 'a', 00H, 'r', 00H, 'g', 00H, 'u'
 	DB	00H, 'm', 00H, 'e', 00H, 'n', 00H, 't', 00H, '"', 00H, 00H, 00H
 CONST	ENDS
@@ -2617,11 +2617,11 @@ $LN4@Allocate_m:
 	je	SHORT $LN7@Allocate_m
 	jmp	SHORT $LN2@Allocate_m
 $LN7@Allocate_m:
-	push	OFFSET $SG168868
-	push	OFFSET $SG168869
+	push	OFFSET $SG168862
+	push	OFFSET $SG168863
 	push	0
 	push	142					; 0000008eH
-	push	OFFSET $SG168870
+	push	OFFSET $SG168864
 	push	2
 	call	__CrtDbgReport
 	add	esp, 24					; 00000018H
@@ -2631,9 +2631,9 @@ $LN7@Allocate_m:
 $LN12@Allocate_m:
 	push	0
 	push	142					; 0000008eH
-	push	OFFSET $SG168871
-	push	OFFSET $SG168872
-	push	OFFSET $SG168873
+	push	OFFSET $SG168865
+	push	OFFSET $SG168866
+	push	OFFSET $SG168867
 	call	__invalid_parameter
 	add	esp, 20					; 00000014H
 	xor	ecx, ecx
@@ -5352,7 +5352,7 @@ _this$ = -4						; size = 4
 ?Process@Goal_AttackTarget@@UAEHXZ PROC			; Goal_AttackTarget::Process
 ; _this$ = ecx
 
-; 59   : {
+; 64   : {
 
 	push	ebp
 	mov	ebp, esp
@@ -5360,34 +5360,34 @@ _this$ = -4						; size = 4
 	mov	DWORD PTR [ebp-4], -858993460		; ccccccccH
 	mov	DWORD PTR _this$[ebp], ecx
 
-; 60   :   //if status is inactive, call Activate()
-; 61   :   ActivateIfInactive();
+; 65   :   //if status is inactive, call Activate()
+; 66   :   ActivateIfInactive();
 
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?ActivateIfInactive@?$Goal@VRaven_Bot@@@@IAEXXZ ; Goal<Raven_Bot>::ActivateIfInactive
 
-; 62   :     
-; 63   :   //process the subgoals
-; 64   :   m_iStatus = ProcessSubgoals();
+; 67   :     
+; 68   :   //process the subgoals
+; 69   :   m_iStatus = ProcessSubgoals();
 
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?ProcessSubgoals@?$Goal_Composite@VRaven_Bot@@@@IAEHXZ ; Goal_Composite<Raven_Bot>::ProcessSubgoals
 	mov	ecx, DWORD PTR _this$[ebp]
 	mov	DWORD PTR [ecx+12], eax
 
-; 65   : 
-; 66   :   ReactivateIfFailed();
+; 70   : 
+; 71   :   ReactivateIfFailed();
 
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?ReactivateIfFailed@?$Goal@VRaven_Bot@@@@IAEXXZ ; Goal<Raven_Bot>::ReactivateIfFailed
 
-; 67   : 
-; 68   :   return m_iStatus;
+; 72   : 
+; 73   :   return m_iStatus;
 
 	mov	edx, DWORD PTR _this$[ebp]
 	mov	eax, DWORD PTR [edx+12]
 
-; 69   : }
+; 74   : }
 
 	add	esp, 4
 	cmp	ebp, esp
@@ -5501,7 +5501,7 @@ $LN2@Activate:
 	lea	ecx, DWORD PTR _dummy$9[ebp]
 	call	??0Vector2D@@QAE@XZ			; Vector2D::Vector2D
 
-; 37   :     if (m_pOwner->canStepLeft(dummy) || m_pOwner->canStepRight(dummy))
+; 37   :     if (m_pOwner->canStepLeft(dummy) || m_pOwner->canStepRight(dummy)) // 요청
 
 	lea	eax, DWORD PTR _dummy$9[ebp]
 	push	eax
@@ -5522,7 +5522,7 @@ $LN2@Activate:
 $LN7@Activate:
 
 ; 38   :     {
-; 39   :       AddSubgoal(new Goal_DodgeSideToSide(m_pOwner));
+; 39   :       AddSubgoal(new Goal_DodgeSideToSide(m_pOwner)); // 요청하고 바로 결과가 안오니까 
 
 	push	40					; 00000028H
 	call	??2@YAPAXI@Z				; operator new
@@ -5555,16 +5555,21 @@ $LN10@Activate:
 	cmp	esi, esp
 	call	__RTC_CheckEsp
 
-; 40   :     }
+; 40   :       // 결과 올때 까지 일단 돌격해버림
+; 41   :       /////////////////////////////////////////////////////////////////////////////////////////////이거 고치는게 2번째 과제///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+; 42   :       // MaxSearchCyclesPerUpdateStep을 극단적으로 줄이면 차이점을 볼 수 있다.
+; 43   :       // CycleOnce의 일부를 미리 받아와서 쓰는거가 해답임 > 그러면 돌진하지 않아도 된다. 이거 해답임!!!!!!!!!!!!!!!!
+; 44   :       // 
+; 45   :     }
 
 	jmp	$LN6@Activate
 $LN5@Activate:
 
-; 41   : 
-; 42   :     //if not able to strafe, head directly at the target's position 
-; 43   :     else
-; 44   :     {
-; 45   :       AddSubgoal(new Goal_SeekToPosition(m_pOwner, m_pOwner->GetTargetBot()->Pos()));
+; 46   : 
+; 47   :     //if not able to strafe, head directly at the target's position 
+; 48   :     else
+; 49   :     {
+; 50   :       AddSubgoal(new Goal_SeekToPosition(m_pOwner, m_pOwner->GetTargetBot()->Pos()));
 
 	push	48					; 00000030H
 	call	??2@YAPAXI@Z				; operator new
@@ -5615,17 +5620,17 @@ $LN12@Activate:
 	call	__RTC_CheckEsp
 $LN6@Activate:
 
-; 46   :     }
-; 47   :   }
+; 51   :     }
+; 52   :   }
 
 	jmp	SHORT $LN1@Activate
 $LN3@Activate:
 
-; 48   : 
-; 49   :   //if the target is not visible, go hunt it.
-; 50   :   else
-; 51   :   {
-; 52   :     AddSubgoal(new Goal_HuntTarget(m_pOwner));
+; 53   : 
+; 54   :   //if the target is not visible, go hunt it.
+; 55   :   else
+; 56   :   {
+; 57   :     AddSubgoal(new Goal_HuntTarget(m_pOwner));
 
 	push	32					; 00000020H
 	call	??2@YAPAXI@Z				; operator new
@@ -5659,8 +5664,8 @@ $LN14@Activate:
 	call	__RTC_CheckEsp
 $LN1@Activate:
 
-; 53   :   }
-; 54   : }
+; 58   :   }
+; 59   : }
 
 	push	edx
 	mov	ecx, ebp
@@ -6546,7 +6551,7 @@ $LN2@ProcessSub:
 	je	SHORT $LN3@ProcessSub
 $LN4@ProcessSub:
 
-; 103  :          (m_SubGoals.front()->isComplete() || m_SubGoals.front()->hasFailed()))
+; 103  :          (m_SubGoals.front()->isComplete() || m_SubGoals.front()->hasFailed())) // Goal이 끝나면 terminate, delete, 다음거를 꺼낸다.
 ; 104  :   {    
 ; 105  :     m_SubGoals.front()->Terminate();
 
@@ -6601,7 +6606,7 @@ $LN3@ProcessSub:
 
 ; 109  : 
 ; 110  :   //if any subgoals remain, process the one at the front of the list
-; 111  :   if (!m_SubGoals.empty())
+; 111  :   if (!m_SubGoals.empty()) // Goal이 비었는지 조사 // 비지 않았으면 다음을 process
 
 	mov	ecx, DWORD PTR _this$[ebp]
 	add	ecx, 16					; 00000010H
@@ -6634,7 +6639,7 @@ $LN3@ProcessSub:
 ; 117  :     //reports 'completed' *and* the subgoal list contains additional goals.When
 ; 118  :     //this is the case, to ensure the parent keeps processing its subgoal list
 ; 119  :     //we must return the 'active' status.
-; 120  :     if (StatusOfSubGoals == completed && m_SubGoals.size() > 1)
+; 120  :     if (StatusOfSubGoals == completed && m_SubGoals.size() > 1) // 끝났는데 subGoal size가 1보다 크다 = 해야할 일이 더 있다.
 
 	cmp	DWORD PTR _StatusOfSubGoals$2[ebp], 2
 	jne	SHORT $LN7@ProcessSub
@@ -6645,7 +6650,7 @@ $LN3@ProcessSub:
 	jbe	SHORT $LN7@ProcessSub
 
 ; 121  :     {
-; 122  :       return active;
+; 122  :       return active; // 끝나지 않았다고 알려줌
 
 	xor	eax, eax
 	jmp	SHORT $LN1@ProcessSub
@@ -6667,7 +6672,7 @@ $LN5@ProcessSub:
 ; 128  :   //no more subgoals to process - return 'completed'
 ; 129  :   else
 ; 130  :   {
-; 131  :     return completed;
+; 131  :     return completed; // 비었으면 끝났따
 
 	mov	eax, 2
 $LN1@ProcessSub:

@@ -100,7 +100,7 @@ int Goal_Composite<entity_type>::ProcessSubgoals()
 { 
   //remove all completed and failed goals from the front of the subgoal list
   while (!m_SubGoals.empty() &&
-         (m_SubGoals.front()->isComplete() || m_SubGoals.front()->hasFailed()))
+         (m_SubGoals.front()->isComplete() || m_SubGoals.front()->hasFailed())) // Goal이 끝나면 terminate, delete, 다음거를 꺼낸다.
   {    
     m_SubGoals.front()->Terminate();
     delete m_SubGoals.front(); 
@@ -108,7 +108,7 @@ int Goal_Composite<entity_type>::ProcessSubgoals()
   }
 
   //if any subgoals remain, process the one at the front of the list
-  if (!m_SubGoals.empty())
+  if (!m_SubGoals.empty()) // Goal이 비었는지 조사 // 비지 않았으면 다음을 process
   { 
     //grab the status of the front-most subgoal
     int StatusOfSubGoals = m_SubGoals.front()->Process();
@@ -117,9 +117,9 @@ int Goal_Composite<entity_type>::ProcessSubgoals()
     //reports 'completed' *and* the subgoal list contains additional goals.When
     //this is the case, to ensure the parent keeps processing its subgoal list
     //we must return the 'active' status.
-    if (StatusOfSubGoals == completed && m_SubGoals.size() > 1)
+    if (StatusOfSubGoals == completed && m_SubGoals.size() > 1) // 끝났는데 subGoal size가 1보다 크다 = 해야할 일이 더 있다.
     {
-      return active;
+      return active; // 끝나지 않았다고 알려줌
     }
 
     return StatusOfSubGoals;
@@ -128,7 +128,7 @@ int Goal_Composite<entity_type>::ProcessSubgoals()
   //no more subgoals to process - return 'completed'
   else
   {
-    return completed;
+    return completed; // 비었으면 끝났따
   }
 }
 
