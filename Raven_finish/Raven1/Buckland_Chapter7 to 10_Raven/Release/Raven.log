@@ -1,0 +1,133 @@
+﻿  Goal_RunAway.cpp
+E:\Desktop\Raven\Raven1\Buckland_Chapter7 to 10_Raven\Goal_RunAway.h(5,10): fatal error C1083: 포함 파일을 열 수 없습니다. 'Goals/Goal_Composite.h': No such file or directory
+  main.cpp
+E:\Desktop\Raven\Raven1\Buckland_Chapter7 to 10_Raven\main.cpp(5,10): fatal error C1083: 포함 파일을 열 수 없습니다. 'misc/utils.h': No such file or directory
+  Raven_Bot.cpp
+E:\Desktop\Raven\Raven1\Buckland_Chapter7 to 10_Raven\Raven_Bot.h(16,10): fatal error C1083: 포함 파일을 열 수 없습니다. 'game/MovingEntity.h': No such file or directory
+  Raven_Game.cpp
+E:\Desktop\Raven\Raven1\Buckland_Chapter7 to 10_Raven\Raven_Game.h(21,10): fatal error C1083: 포함 파일을 열 수 없습니다. 'graph/SparseGraph.h': No such file or directory
+  Raven_Map.cpp
+E:\Desktop\Raven\Raven1\Buckland_Chapter7 to 10_Raven\Raven_Map.h(19,10): fatal error C1083: 포함 파일을 열 수 없습니다. 'graph/SparseGraph.h': No such file or directory
+  Raven_Weapon.cpp
+E:\Desktop\Raven\Raven1\Buckland_Chapter7 to 10_Raven\armory\Raven_Weapon.h(14,10): fatal error C1083: 포함 파일을 열 수 없습니다. '2d/Vector2D.h': No such file or directory
+  Weapon_Blaster.cpp
+E:\Desktop\Raven\Raven1\Buckland_Chapter7 to 10_Raven\armory\Raven_Weapon.h(14,10): fatal error C1083: 포함 파일을 열 수 없습니다. '2d/Vector2D.h': No such file or directory
+  Weapon_RailGun.cpp
+E:\Desktop\Raven\Raven1\Buckland_Chapter7 to 10_Raven\armory\Raven_Weapon.h(14,10): fatal error C1083: 포함 파일을 열 수 없습니다. '2d/Vector2D.h': No such file or directory
+  Weapon_RocketLauncher.cpp
+E:\Desktop\Raven\Raven1\Buckland_Chapter7 to 10_Raven\armory\Raven_Weapon.h(14,10): fatal error C1083: 포함 파일을 열 수 없습니다. '2d/Vector2D.h': No such file or directory
+  Weapon_ShotGun.cpp
+E:\Desktop\Raven\Raven1\Buckland_Chapter7 to 10_Raven\armory\Raven_Weapon.h(14,10): fatal error C1083: 포함 파일을 열 수 없습니다. '2d/Vector2D.h': No such file or directory
+  Projectile_Bolt.cpp
+E:\Desktop\Raven\Raven1\Buckland_Chapter7 to 10_Raven\armory\Raven_Projectile.h(15,10): fatal error C1083: 포함 파일을 열 수 없습니다. 'game/MovingEntity.h': No such file or directory
+  Projectile_Pellet.cpp
+E:\Desktop\Raven\Raven1\Buckland_Chapter7 to 10_Raven\armory\Raven_Projectile.h(15,10): fatal error C1083: 포함 파일을 열 수 없습니다. 'game/MovingEntity.h': No such file or directory
+  Projectile_Rocket.cpp
+E:\Desktop\Raven\Raven1\Buckland_Chapter7 to 10_Raven\armory\Raven_Projectile.h(15,10): fatal error C1083: 포함 파일을 열 수 없습니다. 'game/MovingEntity.h': No such file or directory
+  Projectile_Slug.cpp
+E:\Desktop\Raven\Raven1\Buckland_Chapter7 to 10_Raven\armory\Raven_Projectile.h(15,10): fatal error C1083: 포함 파일을 열 수 없습니다. 'game/MovingEntity.h': No such file or directory
+  Raven_Projectile.cpp
+E:\Desktop\Raven\Raven1\Buckland_Chapter7 to 10_Raven\armory\Raven_Projectile.h(15,10): fatal error C1083: 포함 파일을 열 수 없습니다. 'game/MovingEntity.h': No such file or directory
+  BaseGameEntity.cpp
+E:\Desktop\Raven\Raven1\Common\Game\BaseGameEntity.h(17,10): fatal error C1083: 포함 파일을 열 수 없습니다. '2D/Vector2D.h': No such file or directory
+  Raven_Scriptor.cpp
+E:\Desktop\Raven\Raven1\Buckland_Chapter7 to 10_Raven\lua\Raven_Scriptor.h(12,10): fatal error C1083: 포함 파일을 열 수 없습니다. 'Script/scriptor.h': No such file or directory
+  EntityManager.cpp
+E:\Desktop\Raven\Raven1\Common\Game\EntityManager.cpp(1,10): fatal error C1083: 포함 파일을 열 수 없습니다. 'game/EntityManager.h': No such file or directory
+  GraveMarkers.cpp
+E:\Desktop\Raven\Raven1\Buckland_Chapter7 to 10_Raven\GraveMarkers.h(15,10): fatal error C1083: 포함 파일을 열 수 없습니다. '2d/vector2d.h': No such file or directory
+  Raven_Door.cpp
+E:\Desktop\Raven\Raven1\Buckland_Chapter7 to 10_Raven\Raven_Door.h(16,10): fatal error C1083: 포함 파일을 열 수 없습니다. '2d/vector2d.h': No such file or directory
+  코드를 생성하고 있습니다...
+  컴파일하고 있습니다...
+  Raven_UserOptions.cpp
+  Raven_Goal_Types.cpp
+E:\Desktop\Raven\Raven1\Buckland_Chapter7 to 10_Raven\goals\Raven_Goal_Types.h(5,10): fatal error C1083: 포함 파일을 열 수 없습니다. 'misc/TypeToString.h': No such file or directory
+  Goal_AdjustRange.cpp
+E:\Desktop\Raven\Raven1\Buckland_Chapter7 to 10_Raven\goals\Goal_AdjustRange.h(13,10): fatal error C1083: 포함 파일을 열 수 없습니다. 'goals/Goal.h': No such file or directory
+  Goal_AttackTarget.cpp
+E:\Desktop\Raven\Raven1\Buckland_Chapter7 to 10_Raven\goals\Goal_AttackTarget.h(13,10): fatal error C1083: 포함 파일을 열 수 없습니다. 'Goals/Goal_Composite.h': No such file or directory
+  Goal_Explore.cpp
+E:\Desktop\Raven\Raven1\Buckland_Chapter7 to 10_Raven\goals\Goal_Explore.h(5,10): fatal error C1083: 포함 파일을 열 수 없습니다. 'Goals/Goal_Composite.h': No such file or directory
+  Goal_FollowPath.cpp
+E:\Desktop\Raven\Raven1\Buckland_Chapter7 to 10_Raven\goals\Goal_FollowPath.h(12,10): fatal error C1083: 포함 파일을 열 수 없습니다. 'Goals/Goal_Composite.h': No such file or directory
+  Goal_GetItem.cpp
+E:\Desktop\Raven\Raven1\Buckland_Chapter7 to 10_Raven\goals\Goal_GetItem.h(5,10): fatal error C1083: 포함 파일을 열 수 없습니다. 'Goals/Goal_Composite.h': No such file or directory
+  Goal_HuntTarget.cpp
+E:\Desktop\Raven\Raven1\Buckland_Chapter7 to 10_Raven\goals\Goal_HuntTarget.h(13,10): fatal error C1083: 포함 파일을 열 수 없습니다. 'Goals/Goal_Composite.h': No such file or directory
+  Goal_MoveToPosition.cpp
+E:\Desktop\Raven\Raven1\Buckland_Chapter7 to 10_Raven\goals\Goal_MoveToPosition.h(5,10): fatal error C1083: 포함 파일을 열 수 없습니다. 'Goals/Goal_Composite.h': No such file or directory
+  Goal_NegotiateDoor.cpp
+E:\Desktop\Raven\Raven1\Buckland_Chapter7 to 10_Raven\goals\Goal_NegotiateDoor.h(5,10): fatal error C1083: 포함 파일을 열 수 없습니다. 'Goals/Goal_Composite.h': No such file or directory
+  Goal_Think.cpp
+E:\Desktop\Raven\Raven1\Buckland_Chapter7 to 10_Raven\goals\Goal_Think.h(15,10): fatal error C1083: 포함 파일을 열 수 없습니다. '2d/Vector2D.h': No such file or directory
+  AttackTargetGoal_Evaluator.cpp
+E:\Desktop\Raven\Raven1\Buckland_Chapter7 to 10_Raven\Raven_Bot.h(16,10): fatal error C1083: 포함 파일을 열 수 없습니다. 'game/MovingEntity.h': No such file or directory
+  ExploreGoal_Evaluator.cpp
+E:\Desktop\Raven\Raven1\Buckland_Chapter7 to 10_Raven\Raven_Bot.h(16,10): fatal error C1083: 포함 파일을 열 수 없습니다. 'game/MovingEntity.h': No such file or directory
+  GetHealthGoal_Evaluator.cpp
+E:\Desktop\Raven\Raven1\Buckland_Chapter7 to 10_Raven\Raven_Bot.h(16,10): fatal error C1083: 포함 파일을 열 수 없습니다. 'game/MovingEntity.h': No such file or directory
+  GetWeaponGoal_Evaluator.cpp
+E:\Desktop\Raven\Raven1\Buckland_Chapter7 to 10_Raven\Raven_Bot.h(16,10): fatal error C1083: 포함 파일을 열 수 없습니다. 'game/MovingEntity.h': No such file or directory
+  Raven_Feature.cpp
+E:\Desktop\Raven\Raven1\Buckland_Chapter7 to 10_Raven\Raven_Bot.h(16,10): fatal error C1083: 포함 파일을 열 수 없습니다. 'game/MovingEntity.h': No such file or directory
+  Goal_DodgeSideToSide.cpp
+E:\Desktop\Raven\Raven1\Buckland_Chapter7 to 10_Raven\goals\Goal_DodgeSideToSide.h(13,10): fatal error C1083: 포함 파일을 열 수 없습니다. 'Goals/Goal.h': No such file or directory
+  Goal_SayPhrase.cpp
+  Goal_SeekToPosition.cpp
+E:\Desktop\Raven\Raven1\Buckland_Chapter7 to 10_Raven\goals\Goal_SeekToPosition.h(5,10): fatal error C1083: 포함 파일을 열 수 없습니다. 'Goals/Goal.h': No such file or directory
+  Goal_TraverseEdge.cpp
+E:\Desktop\Raven\Raven1\Buckland_Chapter7 to 10_Raven\goals\Goal_TraverseEdge.h(5,10): fatal error C1083: 포함 파일을 열 수 없습니다. 'Goals/Goal.h': No such file or directory
+  코드를 생성하고 있습니다...
+  컴파일하고 있습니다...
+  Goal_Wander.cpp
+E:\Desktop\Raven\Raven1\Buckland_Chapter7 to 10_Raven\goals\Goal_Wander.h(12,10): fatal error C1083: 포함 파일을 열 수 없습니다. 'Goals/Goal.h': No such file or directory
+  FuzzyModule.cpp
+E:\Desktop\Raven\Raven1\Common\fuzzy\FuzzyModule.cpp(6,10): fatal error C1083: 포함 파일을 열 수 없습니다. 'Fuzzy/FuzzyModule.h': No such file or directory
+  FuzzyOperators.cpp
+E:\Desktop\Raven\Raven1\Common\fuzzy\FuzzyOperators.h(14,10): fatal error C1083: 포함 파일을 열 수 없습니다. 'misc/utils.h': No such file or directory
+  FuzzyVariable.cpp
+E:\Desktop\Raven\Raven1\Common\fuzzy\FuzzyVariable.cpp(1,10): fatal error C1083: 포함 파일을 열 수 없습니다. 'fuzzy/fuzzyvariable.h': No such file or directory
+  FuzzySet_LeftShoulder.cpp
+E:\Desktop\Raven\Raven1\Common\fuzzy\FuzzySet_LeftShoulder.h(13,10): fatal error C1083: 포함 파일을 열 수 없습니다. 'fuzzy/FuzzySet.h': No such file or directory
+  FuzzySet_RightShoulder.cpp
+E:\Desktop\Raven\Raven1\Common\fuzzy\FuzzySet_RightShoulder.h(13,10): fatal error C1083: 포함 파일을 열 수 없습니다. 'fuzzy/FuzzySet.h': No such file or directory
+  FuzzySet_Singleton.cpp
+E:\Desktop\Raven\Raven1\Common\fuzzy\FuzzySet_Singleton.h(12,10): fatal error C1083: 포함 파일을 열 수 없습니다. 'fuzzy/FuzzySet.h': No such file or directory
+  FuzzySet_Triangle.cpp
+E:\Desktop\Raven\Raven1\Common\fuzzy\FuzzySet_Triangle.h(13,10): fatal error C1083: 포함 파일을 열 수 없습니다. 'fuzzy/FuzzySet.h': No such file or directory
+  Raven_PathPlanner.cpp
+E:\Desktop\Raven\Raven1\Buckland_Chapter7 to 10_Raven\navigation\TimeSlicedGraphAlgorithms.h(22,10): fatal error C1083: 포함 파일을 열 수 없습니다. 'graph/SparseGraph.h': No such file or directory
+  Raven_SteeringBehaviors.cpp
+E:\Desktop\Raven\Raven1\Buckland_Chapter7 to 10_Raven\Raven_SteeringBehaviors.h(17,10): fatal error C1083: 포함 파일을 열 수 없습니다. '2d/Vector2D.h': No such file or directory
+  MessageDispatcher.cpp
+E:\Desktop\Raven\Raven1\Common\Messaging\MessageDispatcher.h(18,10): fatal error C1083: 포함 파일을 열 수 없습니다. 'Messaging/Telegram.h': No such file or directory
+  Raven_SensoryMemory.cpp
+E:\Desktop\Raven\Raven1\Buckland_Chapter7 to 10_Raven\Raven_SensoryMemory.h(15,10): fatal error C1083: 포함 파일을 열 수 없습니다. '2d/vector2d.h': No such file or directory
+  RunAway_Evaluator.cpp
+E:\Desktop\Raven\Raven1\Buckland_Chapter7 to 10_Raven\Raven_Bot.h(16,10): fatal error C1083: 포함 파일을 열 수 없습니다. 'game/MovingEntity.h': No such file or directory
+  Trigger_HealthGiver.cpp
+E:\Desktop\Raven\Raven1\Buckland_Chapter7 to 10_Raven\triggers\Trigger_HealthGiver.h(14,10): fatal error C1083: 포함 파일을 열 수 없습니다. 'Triggers/Trigger_Respawning.h': No such file or directory
+  Trigger_SoundNotify.cpp
+E:\Desktop\Raven\Raven1\Buckland_Chapter7 to 10_Raven\triggers\Trigger_SoundNotify.h(17,10): fatal error C1083: 포함 파일을 열 수 없습니다. 'Triggers/Trigger_LimitedLifetime.h': No such file or directory
+  Trigger_WeaponGiver.cpp
+E:\Desktop\Raven\Raven1\Buckland_Chapter7 to 10_Raven\triggers\Trigger_WeaponGiver.h(14,10): fatal error C1083: 포함 파일을 열 수 없습니다. 'Triggers/Trigger_Respawning.h': No such file or directory
+  Raven_WeaponSystem.cpp
+E:\Desktop\Raven\Raven1\Buckland_Chapter7 to 10_Raven\Raven_WeaponSystem.h(15,10): fatal error C1083: 포함 파일을 열 수 없습니다. '2d/vector2d.h': No such file or directory
+  Raven_TargetingSystem.cpp
+E:\Desktop\Raven\Raven1\Buckland_Chapter7 to 10_Raven\Raven_TargetingSystem.h(13,10): fatal error C1083: 포함 파일을 열 수 없습니다. '2d/Vector2D.h': No such file or directory
+  Cgdi.cpp
+E:\Desktop\Raven\Raven1\Common\misc\Cgdi.cpp(1,10): fatal error C1083: 포함 파일을 열 수 없습니다. 'misc/Cgdi.h': No such file or directory
+  CrudeTimer.cpp
+  코드를 생성하고 있습니다...
+  컴파일하고 있습니다...
+  DebugConsole.cpp
+E:\Desktop\Raven\Raven1\Common\Debug\DebugConsole.cpp(1,10): fatal error C1083: 포함 파일을 열 수 없습니다. 'Debug/DebugConsole.h': No such file or directory
+  FrameCounter.cpp
+  PrecisionTimer.cpp
+E:\Desktop\Raven\Raven1\Common\Time\PrecisionTimer.cpp(1,10): fatal error C1083: 포함 파일을 열 수 없습니다. 'Time/PrecisionTimer.h': No such file or directory
+  Vector2d.cpp
+E:\Desktop\Raven\Raven1\Common\2D\Vector2D.h(16,10): fatal error C1083: 포함 파일을 열 수 없습니다. 'misc/utils.h': No such file or directory
+  WindowUtils.cpp
+E:\Desktop\Raven\Raven1\Common\misc\WindowUtils.cpp(1,10): fatal error C1083: 포함 파일을 열 수 없습니다. 'misc/WindowUtils.h': No such file or directory
+  코드를 생성하고 있습니다...
