@@ -106,7 +106,8 @@ double Raven_Feature::Health(Raven_Bot* pBot)
 }
 
 
-//------------------------------- HealthRate ---------------------------------/**/
+//------------------------------- HealthRate ---------------------------------
+// 
 //
 //-----------------------------------------------------------------------------/**/
 double Raven_Feature::Strength_Bot(Raven_Bot* pBot) {
@@ -120,9 +121,8 @@ double Raven_Feature::Strength_Bot(Raven_Bot* pBot) {
     double NumCartridges = (double)pBot->GetWeaponSys()->GetAmmoRemainingForWeapon(type_shotgun);
     double NumRockets = (double)pBot->GetWeaponSys()->GetAmmoRemainingForWeapon(type_rocket_launcher);
 
-    //the value of the tweaker (must be in the range 0-1) indicates how much
-    //desirability value is returned even if a bot has not picked up any weapons.
-    //(it basically adds in an amount for a bot's persistent weapon -- the blaster)
+    /// //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
     const double Tweaker = 0.1;
 
     double totalWeaponRate = Tweaker + (1 - Tweaker) * (NumSlugs + NumCartridges + NumRockets) / (MaxRoundsForShotgun + MaxRoundsForRailgun + MaxRoundsForRocketLauncher);

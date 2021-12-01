@@ -1,0 +1,286 @@
+NavGraph for maps/Raven_DM1.map loaded okay
+Average edge length is 23.7036
+Neighborhood range set to 24.7036
+Partitioning navgraph nodes...
+Loading map...
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Wall
+Creating a Spawn Point
+Creating a Spawn Point
+Creating a Spawn Point
+Creating a Health
+Creating a Health
+Creating a Health
+Creating a rocket_launcher
+Creating a Railgun
+Creating a shotgun
+Creating a shotgun
+Creating a rocket_launcher
+maps/Raven_DM1.map loaded okay
+BOT 403 IS STUCK!!
+BOT 401 IS STUCK!!
+BOT 402 IS STUCK!!
+BOT 403 IS STUCK!!
+BOT 402 IS STUCK!!
+BOT 403 IS STUCK!!
+BOT 403 IS STUCK!!
+BOT 402 IS STUCK!!
+BOT 401 IS STUCK!!
+BOT 402 IS STUCK!!
+BOT 401 IS STUCK!!
+BOT 403 IS STUCK!!
+BOT 401 IS STUCK!!
+BOT 402 IS STUCK!!
+BOT 403 IS STUCK!!
+BOT 402 IS STUCK!!
+BOT 403 IS STUCK!!
+BOT 401 IS STUCK!!
+BOT 402 IS STUCK!!
+BOT 401 IS STUCK!!
+BOT 402 IS STUCK!!
+BOT 401 IS STUCK!!
+BOT 401 IS STUCK!!
+BOT 401 IS STUCK!!
+BOT 402 IS STUCK!!
+BOT 401 IS STUCK!!
+BOT 401 IS STUCK!!
+BOT 401 IS STUCK!!
+BOT 401 IS STUCK!!
+BOT 401 IS STUCK!!
+BOT 401 IS STUCK!!
+BOT 402 IS STUCK!!
+BOT 401 IS STUCK!!
+BOT 402 IS STUCK!!
+BOT 401 IS STUCK!!
+BOT 401 IS STUCK!!
+BOT 402 IS STUCK!!
+BOT 403 IS STUCK!!
+BOT 403 IS STUCK!!
+BOT 402 IS STUCK!!
+BOT 401 IS STUCK!!
+BOT 403 IS STUCK!!
+BOT 402 IS STUCK!!
+BOT 401 IS STUCK!!
+BOT 403 IS STUCK!!
+Player is exorcised from bot 402
+Player is exorcised from bot 401
+BOT 402 IS STUCK!!
+BOT 403 IS STUCK!!
+Player is exorcised from bot 403
+Player is exorcised from bot 401
+BOT 402 IS STUCK!!
+Player is exorcised from bot 403
+Player is exorcised from bot 402
+BOT 401 IS STUCK!!
+Player Possesses bot 401
+Player Possesses bot 401
+Player is exorcised from bot 401
+BOT 401 IS STUCK!!
+BOT 401 IS STUCK!!
+BOT 402 IS STUCK!!
+BOT 403 IS STUCK!!
+BOT 401 IS STUCK!!
+BOT 403 IS STUCK!!
+BOT 13959 IS STUCK!!
+BOT 13959 IS STUCK!!
+BOT 13959 IS STUCK!!
+BOT 401 IS STUCK!!
+BOT 13954 IS STUCK!!
+BOT 13959 IS STUCK!!
+BOT 401 IS STUCK!!
+BOT 401 IS STUCK!!
+BOT 13954 IS STUCK!!
+BOT 403 IS STUCK!!
+BOT 402 IS STUCK!!
+BOT 401 IS STUCK!!
+BOT 13959 IS STUCK!!
+BOT 13954 IS STUCK!!
+BOT 401 IS STUCK!!
+BOT 402 IS STUCK!!
+BOT 402 IS STUCK!!
+BOT 402 IS STUCK!!
+BOT 401 IS STUCK!!
+BOT 13954 IS STUCK!!
+BOT 13954 IS STUCK!!
+BOT 13959 IS STUCK!!
+BOT 402 IS STUCK!!
+BOT 13959 IS STUCK!!
+BOT 401 IS STUCK!!
+BOT 401 IS STUCK!!
+BOT 13959 IS STUCK!!
+BOT 403 IS STUCK!!
+BOT 13959 IS STUCK!!
+BOT 401 IS STUCK!!
+BOT 402 IS STUCK!!
+BOT 402 IS STUCK!!
+BOT 403 IS STUCK!!
+BOT 13954 IS STUCK!!
+BOT 13954 IS STUCK!!
+BOT 401 IS STUCK!!
+BOT 403 IS STUCK!!
+BOT 13954 IS STUCK!!
+BOT 403 IS STUCK!!
+BOT 13959 IS STUCK!!
+BOT 401 IS STUCK!!
+BOT 403 IS STUCK!!
+BOT 402 IS STUCK!!
+BOT 401 IS STUCK!!
+Player is exorcised from bot 402
+Player is exorcised from bot 401
+Player is exorcised from bot 13954
+Player is exorcised from bot 402
+Player is exorcised from bot 13959
+BOT 401 IS STUCK!!
+BOT 402 IS STUCK!!
+BOT 403 IS STUCK!!
+BOT 13954 IS STUCK!!
+BOT 13959 IS STUCK!!
+BOT 30184 IS STUCK!!
+BOT 30209 IS STUCK!!
+BOT 30218 IS STUCK!!
+BOT 30249 IS STUCK!!
+Player is exorcised from bot 30184
+Player is exorcised from bot 401
+Player is exorcised from bot 13959
+Player is exorcised from bot 402
+BOT 403 IS STUCK!!
+BOT 13954 IS STUCK!!
+BOT 30209 IS STUCK!!
+BOT 30249 IS STUCK!!
+Player is exorcised from bot 13954
+BOT 401 IS STUCK!!
+BOT 402 IS STUCK!!
+BOT 403 IS STUCK!!
+BOT 13959 IS STUCK!!
+BOT 30184 IS STUCK!!
+BOT 30218 IS STUCK!!
+BOT 30249 IS STUCK!!
+Player is exorcised from bot 30249
+Player is exorcised from bot 30184
+Player is exorcised from bot 13954
+Player is exorcised from bot 13959
+Player Possesses bot 13954
+Player Possesses bot 13954
+Player is exorcised from bot 13954
+Player is exorcised from bot 30184
+Player is exorcised from bot 30249
+Player Possesses bot 403
+Player Possesses bot 403
+Player Possesses bot 403
+Player Possesses bot 403
+Player is exorcised from bot 403
+Player Possesses bot 30249
+Player Possesses bot 30249
+Player Possesses bot 30249
+BOT 30218 IS STUCK!!
+Player Possesses bot 30249
+Player is exorcised from bot 30249
+Player is exorcised from bot 30184
+Player is exorcised from bot 13954
+Player is exorcised from bot 13959
+Player is exorcised from bot 401
+BOT 402 IS STUCK!!
+BOT 403 IS STUCK!!
+BOT 30209 IS STUCK!!
+BOT 30218 IS STUCK!!
+Player is exorcised from bot 402
+BOT 403 IS STUCK!!
+BOT 13954 IS STUCK!!
+BOT 13959 IS STUCK!!
+BOT 30184 IS STUCK!!
+BOT 30218 IS STUCK!!
+BOT 30249 IS STUCK!!
+Player is exorcised from bot 13954
+Player is exorcised from bot 13959
+Player is exorcised from bot 402
+BOT 401 IS STUCK!!
+BOT 30209 IS STUCK!!
+BOT 30218 IS STUCK!!
+BOT 30249 IS STUCK!!
+Player is exorcised from bot 401
+BOT 13954 IS STUCK!!
+BOT 13959 IS STUCK!!
+BOT 30218 IS STUCK!!
+BOT 30249 IS STUCK!!
+BOT 13954 IS STUCK!!
+Player Possesses bot 13959
+Player Possesses bot 13959
+Player is exorcised from bot 13959
+BOT 401 IS STUCK!!
+BOT 402 IS STUCK!!
+BOT 403 IS STUCK!!
+BOT 13954 IS STUCK!!
+BOT 13959 IS STUCK!!
+BOT 30184 IS STUCK!!
+BOT 30249 IS STUCK!!
+BOT 401 IS STUCK!!
+BOT 403 IS STUCK!!
+BOT 13959 IS STUCK!!
+BOT 30184 IS STUCK!!
+BOT 30218 IS STUCK!!
+BOT 30249 IS STUCK!!
+deleting raven bot (id = 401)
+deleting raven bot (id = 402)
+deleting raven bot (id = 403)
+deleting raven bot (id = 13954)
+deleting raven bot (id = 13959)
+deleting raven bot (id = 30184)
+deleting raven bot (id = 30209)
+deleting raven bot (id = 30218)
+deleting raven bot (id = 30249)

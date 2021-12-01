@@ -1,4 +1,5 @@
-#include "RunAway_Evaluator.h"/**/
+#include "RunAway_Evaluator.h"
+
 #include "navigation/Raven_PathPlanner.h"/**/
 #include "Raven_ObjectEnumerations.h"
 #include "lua/Raven_Scriptor.h"
@@ -17,14 +18,14 @@ double RunAway_Evaluator::CalculateDesirability(Raven_Bot* pBot)
 {
     double Desirability = 0.0;
 
-    if (pBot->GetTargetSys()->isTargetPresent()) {// 타겟이라면
+    if (pBot->GetTargetSys()->isTargetPresent()) {// 타겟이면
 
         Raven_Bot* target_enemy = pBot->GetTargetSys()->GetTarget();
-        double mStrength = Raven_Feature::TotalWeaponStrength(pBot);
-        double enemyStrength = Raven_Feature::TotalWeaponStrength(target_enemy);
+        double mStrength = Raven_Feature::Strength_Bot(pBot);
+        double enemyStrength = Raven_Feature::Strength_Bot(target_enemy);
 
-        if (enemyStrength > mStrength) {//타겟의 공격력이 자신보다 높으면...
-            Desirability = Raven_Feature::Strength_Bot(pBot); // 내가 계산한 나의 힘
+        if (enemyStrength > mStrength) {// 타겟의 공격력이 자신보다 높으면
+            Desirability = (1.0 - Raven_Feature::Strength_Bot(pBot)); // (1 - 나의 전투력) = 도망쳐야하는 점수
         }
 
     }
